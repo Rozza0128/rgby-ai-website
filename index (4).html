@@ -3,1215 +3,1758 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RGBY.ai - Cognitive Architecture Revolution</title>
-    <meta name="description" content="Experience the future of AI with RGBY.ai's revolutionary cognitive architecture. Where regulatory symmetry meets cutting-edge innovation.">
-    
-    <!-- Preload critical resources -->
+    <title>RGBY.ai — Next-Generation AI from Birmingham</title>
+    <meta name="description" content="RGBY.ai builds deterministic AI systems for governance, forensic intelligence, and cognitive architecture. Birmingham-based, globally ambitious.">
+    <meta property="og:title" content="RGBY.ai — The next generation of AI is deterministic">
+    <meta property="og:description" content="Governance-grade cognitive architecture. Built in Birmingham, designed for the world.">
+    <meta property="og:type" content="website">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Modern fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- EmailJS -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    
+
     <style>
         :root {
-            /* Revolutionary Color System */
-            --neon-cyan: #00ffff;
-            --neon-magenta: #ff0080;
-            --neon-yellow: #ffff00;
-            --electric-blue: #0080ff;
-            --plasma-purple: #8000ff;
-            --atomic-green: #00ff80;
-            --quantum-red: #ff4040;
-            
-            /* RGBY Enhanced */
-            --red: linear-gradient(135deg, #ff4040, #ff8080);
-            --green: linear-gradient(135deg, #00ff80, #80ffaa);
-            --blue: linear-gradient(135deg, #0080ff, #4da6ff);
-            --yellow: linear-gradient(135deg, #ffff00, #ffff80);
-            
-            /* Base Colors */
-            --void-black: #0a0a0a;
-            --space-black: #111111;
-            --dark-matter: #1a1a1a;
-            --cosmic-white: #ffffff;
-            --stellar-white: #f8f9fa;
-            
-            /* Glass & Effects */
-            --glass-light: rgba(255, 255, 255, 0.1);
-            --glass-heavy: rgba(255, 255, 255, 0.2);
-            --glow-primary: 0 0 40px rgba(0, 255, 255, 0.5);
-            --glow-secondary: 0 0 60px rgba(255, 0, 128, 0.4);
-            
-            /* Shadows */
-            --shadow-cosmic: 0 25px 50px rgba(0, 0, 0, 0.5);
-            --shadow-neon: 0 0 30px currentColor;
+            --r: #E8443A;
+            --g: #34C759;
+            --b: #3B82F6;
+            --y: #FACC15;
+
+            --bg: #09090B;
+            --bg-elevated: #111113;
+            --bg-card: #18181B;
+            --bg-card-hover: #1E1E22;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(255, 255, 255, 0.12);
+
+            --text: #FAFAFA;
+            --text-2: #A1A1AA;
+            --text-3: #52525B;
+
+            --radius: 12px;
+            --radius-lg: 20px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background: var(--void-black);
-            color: var(--cosmic-white);
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
             overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--space-black);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-magenta));
-            border-radius: 10px;
-        }
-
-        /* Animated Background */
-        .cosmic-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: 
-                radial-gradient(ellipse at top left, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at top right, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at center, rgba(128, 0, 255, 0.05) 0%, transparent 50%),
-                linear-gradient(135deg, var(--void-black) 0%, var(--space-black) 50%, var(--dark-matter) 100%);
-            animation: cosmicShift 20s ease-in-out infinite;
-        }
-
-        @keyframes cosmicShift {
-            0%, 100% { 
-                background-position: 0% 0%, 100% 0%, 50% 50%, 0% 0%;
-                filter: hue-rotate(0deg);
-            }
-            33% { 
-                background-position: 100% 100%, 0% 100%, 0% 0%, 100% 100%;
-                filter: hue-rotate(120deg);
-            }
-            66% { 
-                background-position: 0% 100%, 100% 0%, 100% 100%, 0% 100%;
-                filter: hue-rotate(240deg);
-            }
-        }
-
-        /* Floating Particles */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--neon-cyan);
-            border-radius: 50%;
-            animation: float 15s linear infinite;
-            box-shadow: 0 0 10px currentColor;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) translateX(0) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh) translateX(100px) scale(1);
-                opacity: 0;
-            }
-        }
-
-        /* Ultra Modern Navigation */
-        .ultra-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 1rem 0;
-            z-index: 1000;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .ultra-nav.scrolled {
-            background: rgba(10, 10, 10, 0.95);
-            padding: 0.5rem 0;
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-brand {
-            font-size: 2rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-magenta), var(--neon-yellow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
-            font-family: 'JetBrains Mono', monospace;
-            position: relative;
-        }
-
-        .nav-brand::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-magenta));
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .nav-brand:hover::after {
-            transform: scaleX(1);
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-link {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-magenta));
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-
-        .nav-link:hover {
-            color: var(--void-black);
-            transform: translateY(-2px);
-        }
-
-        .nav-link:hover::before {
-            left: 0;
-        }
-
-        /* Mobile Menu Toggle */
-        .mobile-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 4px;
-        }
-
-        .mobile-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--neon-cyan);
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        /* Revolutionary Hero Section */
-        .quantum-hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .hero-content {
-            z-index: 2;
-        }
-
-        .quantum-badge {
-            display: inline-block;
-            padding: 0.75rem 2rem;
-            background: rgba(0, 255, 255, 0.1);
-            border: 1px solid var(--neon-cyan);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--neon-cyan);
-            margin-bottom: 2rem;
-            position: relative;
-            overflow: hidden;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
-            50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(0, 255, 255, 0.5); }
-        }
-
-        .quantum-title {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 700;
-            line-height: 0.9;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .title-line {
-            display: block;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .title-text {
-            display: inline-block;
-            background: linear-gradient(45deg, var(--cosmic-white), var(--neon-cyan), var(--neon-magenta));
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: textShimmer 3s ease-in-out infinite;
-        }
-
-        @keyframes textShimmer {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .quantum-subtitle {
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 3rem;
-            max-width: 600px;
-            line-height: 1.6;
-        }
-
-        .quantum-ctas {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .quantum-btn {
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-magenta));
-            color: var(--void-black);
-            box-shadow: var(--glow-primary);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--cosmic-white);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .quantum-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
-        }
-
-        /* Revolutionary 3D Visual */
-        .quantum-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            height: 600px;
-        }
-
-        .rgby-cube {
-            width: 300px;
-            height: 300px;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: cubeRotate 20s linear infinite;
-        }
-
-        @keyframes cubeRotate {
-            0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-            100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
-        }
-
-        .cube-face {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            font-weight: 700;
-            color: white;
-            text-shadow: 0 0 20px currentColor;
-            border: 2px solid currentColor;
-            backdrop-filter: blur(10px);
-            font-family: system-ui, -apple-system, sans-serif;
-            letter-spacing: 0;
-            text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
         }
 
-        .face-front {
-            background: var(--red);
-            transform: rotateY(0deg) translateZ(150px);
+        ::selection { background: var(--b); color: white; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1.25rem, 4vw, 3rem);
         }
 
-        .face-back {
-            background: var(--green);
-            transform: rotateY(180deg) translateZ(150px);
+        /* Grain */
+        body::before {
+            content: '';
+            position: fixed; inset: 0; z-index: 0;
+            pointer-events: none; opacity: 0.02;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat; background-size: 200px;
         }
 
-        .face-right {
-            background: var(--blue);
-            transform: rotateY(90deg) translateZ(150px);
+        .ambient { position: fixed; pointer-events: none; z-index: 0; border-radius: 50%; }
+        .ambient-1 { top: -30%; left: -15%; width: 60%; height: 60%; background: radial-gradient(ellipse, rgba(59,130,246,0.05) 0%, transparent 70%); }
+        .ambient-2 { bottom: -30%; right: -15%; width: 50%; height: 50%; background: radial-gradient(ellipse, rgba(232,68,58,0.04) 0%, transparent 70%); }
+
+        /* ═══ Nav ═══ */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1rem 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .nav.scrolled {
+            background: rgba(9,9,11,0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+
+        .nav-brand {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem; font-weight: 800;
+            text-decoration: none; color: var(--text);
+            letter-spacing: -0.03em;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .brand-dots { display: flex; gap: 3px; }
+        .brand-dots span { width: 6px; height: 6px; border-radius: 50%; }
+        .brand-dots span:nth-child(1) { background: var(--r); }
+        .brand-dots span:nth-child(2) { background: var(--g); }
+        .brand-dots span:nth-child(3) { background: var(--b); }
+        .brand-dots span:nth-child(4) { background: var(--y); }
+
+        .nav-links { display: flex; gap: 0.25rem; align-items: center; }
+        .nav-link {
+            color: var(--text-2); text-decoration: none;
+            font-size: 0.875rem; font-weight: 500;
+            padding: 0.5rem 1rem; border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .nav-link:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+        .nav-cta {
+            background: var(--text); color: var(--bg);
+            font-weight: 600; margin-left: 0.75rem;
+        }
+        .nav-cta:hover { background: #E4E4E7; color: var(--bg); }
+
+        .mobile-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; padding: 4px; }
+        .mobile-toggle span { width: 20px; height: 1.5px; background: var(--text-2); border-radius: 2px; transition: 0.3s; }
+
+        /* ═══ Hero ═══ */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            position: relative; z-index: 1; padding: 8rem 0 6rem;
+        }
+        .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: center; }
+
+        .hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.375rem 1rem;
+            background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2);
+            border-radius: 100px; font-size: 0.8rem; font-weight: 500;
+            color: var(--b); margin-bottom: 2rem;
+            font-family: 'DM Mono', monospace;
+        }
+        .eyebrow-dot {
+            width: 6px; height: 6px; border-radius: 50%; background: var(--g);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+        .hero-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.75rem, 5.5vw, 4.25rem);
+            font-weight: 800; line-height: 1.08;
+            letter-spacing: -0.04em; margin-bottom: 1.75rem;
+        }
+        .hero-title .accent-r { color: var(--r); }
+        .hero-title .accent-g { color: var(--g); }
+        .hero-title .accent-b { color: var(--b); }
+        .hero-title .accent-y { color: var(--y); }
+
+        .hero-desc {
+            font-size: 1.125rem; color: var(--text-2);
+            max-width: 500px; margin-bottom: 2rem; line-height: 1.7;
         }
 
-        .face-left {
-            background: var(--yellow);
-            transform: rotateY(-90deg) translateZ(150px);
+        /* Waitlist CTA (primary) */
+        .waitlist-inline {
+            display: flex; gap: 0.75rem; max-width: 440px; margin-bottom: 1.25rem;
+        }
+        .waitlist-inline input {
+            flex: 1; padding: 0.75rem 1rem;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 10px; color: var(--text);
+            font-size: 0.9375rem; font-family: 'DM Sans', sans-serif;
+            outline: none; transition: all 0.2s ease;
+        }
+        .waitlist-inline input:focus { border-color: var(--b); box-shadow: 0 0 0 3px rgba(59,130,246,0.1); }
+        .waitlist-inline input::placeholder { color: var(--text-3); }
+        .waitlist-inline button {
+            padding: 0.75rem 1.5rem; background: var(--text); color: var(--bg);
+            border: none; border-radius: 10px; font-size: 0.9375rem;
+            font-weight: 600; font-family: 'DM Sans', sans-serif;
+            cursor: pointer; transition: all 0.2s ease; white-space: nowrap;
+        }
+        .waitlist-inline button:hover { background: #E4E4E7; transform: translateY(-1px); }
+        .waitlist-count {
+            font-size: 0.8125rem; color: var(--text-3);
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .waitlist-count .wc-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--g); }
+        .waitlist-success {
+            display: none; padding: 0.75rem 1rem;
+            background: rgba(52,199,89,0.1); border: 1px solid rgba(52,199,89,0.2);
+            border-radius: 10px; color: var(--g); font-size: 0.875rem;
+            font-weight: 500; max-width: 440px;
         }
 
-        .face-top {
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-magenta));
-            transform: rotateX(90deg) translateZ(150px);
+        .hero-secondary-links {
+            display: flex; gap: 1.5rem; margin-top: 0.5rem;
+        }
+        .hero-secondary-links a {
+            color: var(--text-3); text-decoration: none;
+            font-size: 0.8125rem; font-weight: 500;
+            transition: color 0.2s; display: flex; align-items: center; gap: 0.375rem;
+        }
+        .hero-secondary-links a:hover { color: var(--text-2); }
+        .hero-secondary-links svg { width: 14px; height: 14px; }
+
+        /* Hero Visual */
+        .hero-visual { display: flex; justify-content: center; align-items: center; }
+
+        .signal-grid {
+            width: 340px; height: 340px;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 8px; position: relative;
+        }
+        .signal-quadrant {
+            border-radius: 16px; position: relative; overflow: hidden;
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 1.25rem; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .signal-quadrant:hover { transform: scale(1.03); z-index: 2; }
+
+        .sq-r { background: linear-gradient(135deg, rgba(232,68,58,0.2) 0%, rgba(232,68,58,0.08) 100%); border: 1px solid rgba(232,68,58,0.2); }
+        .sq-g { background: linear-gradient(135deg, rgba(52,199,89,0.2) 0%, rgba(52,199,89,0.08) 100%); border: 1px solid rgba(52,199,89,0.2); }
+        .sq-b { background: linear-gradient(135deg, rgba(59,130,246,0.2) 0%, rgba(59,130,246,0.08) 100%); border: 1px solid rgba(59,130,246,0.2); }
+        .sq-y { background: linear-gradient(135deg, rgba(250,204,21,0.2) 0%, rgba(250,204,21,0.08) 100%); border: 1px solid rgba(250,204,21,0.2); }
+
+        .sq-letter {
+            font-family: 'Syne', sans-serif; font-weight: 800;
+            font-size: 2.5rem; line-height: 1; margin-bottom: 0.25rem;
+        }
+        .sq-r .sq-letter { color: var(--r); }
+        .sq-g .sq-letter { color: var(--g); }
+        .sq-b .sq-letter { color: var(--b); }
+        .sq-y .sq-letter { color: var(--y); }
+
+        .sq-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.625rem; text-transform: uppercase;
+            letter-spacing: 0.1em; color: var(--text-3);
         }
 
-        .face-bottom {
-            background: linear-gradient(45deg, var(--plasma-purple), var(--atomic-green));
-            transform: rotateX(-90deg) translateZ(150px);
+        .signal-grid::after {
+            content: ''; position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px; height: 60px;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 50%;
+            animation: ring 3s ease-in-out infinite;
+        }
+        @keyframes ring {
+            0%,100% { width: 60px; height: 60px; opacity: 0.5; }
+            50% { width: 80px; height: 80px; opacity: 0; }
+        }
+        .signal-caption {
+            text-align: center; margin-top: 1.5rem;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.7rem; color: var(--text-3);
+            letter-spacing: 0.12em; text-transform: uppercase;
         }
 
-        /* Quantum Stats */
-        .quantum-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
+        /* ═══ Social Proof Numbers ═══ */
+        .proof-strip {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 3.5rem 0; position: relative; z-index: 1;
+        }
+        .proof-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+        }
+        .proof-stat { text-align: center; position: relative; }
+        .proof-stat:not(:last-child)::after {
+            content: ''; position: absolute; right: -1rem; top: 50%;
+            transform: translateY(-50%); width: 1px; height: 40px;
+            background: var(--border);
+        }
+        .proof-number {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.25rem; font-weight: 800;
+            letter-spacing: -0.03em; margin-bottom: 0.25rem;
+        }
+        .proof-number.color-r { color: var(--r); }
+        .proof-number.color-g { color: var(--g); }
+        .proof-number.color-b { color: var(--b); }
+        .proof-number.color-y { color: var(--y); }
+        .proof-label {
+            font-size: 0.8125rem; color: var(--text-3);
+            font-weight: 500; line-height: 1.4;
         }
 
-        .stat-quantum {
-            text-align: center;
-            padding: 2rem;
-            background: var(--glass-light);
-            border-radius: 20px;
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+        /* ═══ Manifesto ═══ */
+        .manifesto {
+            padding: 5rem 0; position: relative; z-index: 1;
         }
+        .manifesto-text {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 700; line-height: 1.4;
+            letter-spacing: -0.02em; max-width: 800px;
+        }
+        .manifesto-text .dim { color: var(--text-3); }
+        .manifesto-location {
+            margin-top: 2rem; display: flex; align-items: center; gap: 0.75rem;
+            font-size: 0.875rem; color: var(--text-3);
+        }
+        .location-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--g); }
 
-        .stat-quantum:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--glow-primary);
-            border-color: var(--neon-cyan);
-        }
+        /* ═══ Section shared ═══ */
+        .section { padding: clamp(5rem, 10vw, 8rem) 0; position: relative; z-index: 1; }
 
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-magenta));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-family: 'JetBrains Mono', monospace;
+        .section-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.75rem; color: var(--text-3);
+            text-transform: uppercase; letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+            display: flex; align-items: center; gap: 0.75rem;
         }
-
-        .stat-label {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 1rem;
-            font-weight: 500;
-        }
-
-        /* About Section */
-        .quantum-about {
-            padding: 10rem 0;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 6rem;
-        }
+        .section-label::before { content: ''; width: 24px; height: 1px; background: var(--text-3); }
 
         .section-title {
-            font-size: clamp(3rem, 6vw, 5rem);
-            font-weight: 700;
-            margin-bottom: 2rem;
-            background: linear-gradient(45deg, var(--cosmic-white), var(--neon-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800; letter-spacing: -0.03em;
+            line-height: 1.1; margin-bottom: 1rem;
+        }
+        .section-desc {
+            font-size: 1.0625rem; color: var(--text-2);
+            max-width: 560px; line-height: 1.7; margin-bottom: 3.5rem;
         }
 
-        .section-subtitle {
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 800px;
-            margin: 0 auto;
+        /* ═══ Domains ═══ */
+        .domains-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+        }
+        .domain-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 2.25rem;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative; overflow: hidden;
+        }
+        .domain-card::before {
+            content: ''; position: absolute;
+            top: 0; left: 0; right: 0; height: 2px;
+            background: transparent; transition: background 0.35s ease;
+        }
+        .domain-card:hover {
+            background: var(--bg-card-hover); border-color: var(--border-hover);
+            transform: translateY(-2px);
+        }
+        .domain-card:nth-child(1):hover::before { background: linear-gradient(90deg, var(--r), transparent 80%); }
+        .domain-card:nth-child(2):hover::before { background: linear-gradient(90deg, var(--g), transparent 80%); }
+        .domain-card:nth-child(3):hover::before { background: linear-gradient(90deg, var(--b), transparent 80%); }
+        .domain-card:nth-child(4):hover::before { background: linear-gradient(90deg, var(--y), transparent 80%); }
+        .domain-card:nth-child(5):hover::before { background: linear-gradient(90deg, var(--r), transparent 80%); }
+        .domain-card:nth-child(6):hover::before { background: linear-gradient(90deg, var(--b), transparent 80%); }
+
+        .domain-icon {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.5rem; font-size: 1.125rem;
+        }
+        .domain-card:nth-child(1) .domain-icon { background: rgba(232,68,58,0.12); color: var(--r); }
+        .domain-card:nth-child(2) .domain-icon { background: rgba(52,199,89,0.12); color: var(--g); }
+        .domain-card:nth-child(3) .domain-icon { background: rgba(59,130,246,0.12); color: var(--b); }
+        .domain-card:nth-child(4) .domain-icon { background: rgba(250,204,21,0.12); color: var(--y); }
+        .domain-card:nth-child(5) .domain-icon { background: rgba(232,68,58,0.12); color: var(--r); }
+        .domain-card:nth-child(6) .domain-icon { background: rgba(59,130,246,0.12); color: var(--b); }
+
+        .domain-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.2rem; font-weight: 700;
+            margin-bottom: 0.75rem; letter-spacing: -0.02em;
+        }
+        .domain-desc { font-size: 0.9375rem; color: var(--text-2); line-height: 1.65; }
+
+        /* ═══ Live Demo ═══ */
+        .demo-section {
+            background: var(--bg-elevated);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
-        .features-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
+        .demo-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 3rem; align-items: start;
         }
 
-        .feature-quantum {
-            background: var(--glass-light);
-            padding: 3rem;
-            border-radius: 30px;
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            backdrop-filter: blur(20px);
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
+        .demo-box {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 2rem; overflow: hidden;
         }
 
-        .feature-quantum::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-magenta));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: -1;
+        .demo-input-area textarea {
+            width: 100%; min-height: 140px; padding: 1rem;
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: 10px; color: var(--text);
+            font-size: 0.9375rem; font-family: 'DM Sans', sans-serif;
+            resize: vertical; outline: none; transition: border-color 0.2s;
+        }
+        .demo-input-area textarea:focus { border-color: var(--b); }
+        .demo-input-area textarea::placeholder { color: var(--text-3); }
+
+        .demo-btn {
+            margin-top: 1rem; padding: 0.625rem 1.5rem;
+            background: var(--text); color: var(--bg);
+            border: none; border-radius: 8px;
+            font-size: 0.875rem; font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer; transition: all 0.2s ease;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .demo-btn:hover { background: #E4E4E7; }
+        .demo-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .demo-presets {
+            display: flex; gap: 0.5rem; margin-top: 0.75rem; flex-wrap: wrap;
+        }
+        .demo-preset {
+            padding: 0.3rem 0.75rem; background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border); border-radius: 6px;
+            color: var(--text-3); font-size: 0.75rem; cursor: pointer;
+            font-family: 'DM Mono', monospace; transition: all 0.2s;
+        }
+        .demo-preset:hover { border-color: var(--border-hover); color: var(--text-2); background: rgba(255,255,255,0.06); }
+
+        .demo-results { display: none; }
+        .demo-results.active { display: block; }
+
+        .demo-result-header {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.6875rem; text-transform: uppercase;
+            letter-spacing: 0.12em; color: var(--text-3);
+            margin-bottom: 1.25rem;
         }
 
-        .feature-quantum:hover::before {
-            opacity: 0.1;
+        .demo-channel {
+            display: flex; align-items: center; gap: 1rem;
+            padding: 0.875rem 0;
+            border-bottom: 1px solid var(--border);
         }
+        .demo-channel:last-child { border-bottom: none; }
 
-        .feature-quantum:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: var(--shadow-cosmic);
-            border-color: var(--neon-cyan);
+        .dc-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+        .dc-r .dc-dot { background: var(--r); box-shadow: 0 0 10px rgba(232,68,58,0.4); }
+        .dc-g .dc-dot { background: var(--g); box-shadow: 0 0 10px rgba(52,199,89,0.4); }
+        .dc-b .dc-dot { background: var(--b); box-shadow: 0 0 10px rgba(59,130,246,0.4); }
+        .dc-y .dc-dot { background: var(--y); box-shadow: 0 0 10px rgba(250,204,21,0.4); }
+
+        .dc-info { flex: 1; }
+        .dc-name { font-size: 0.8125rem; font-weight: 600; }
+        .dc-signal { font-size: 0.75rem; color: var(--text-3); margin-top: 0.125rem; }
+
+        .dc-bar-wrap {
+            width: 100px; height: 6px; border-radius: 3px;
+            background: rgba(255,255,255,0.06); overflow: hidden;
         }
-
-        .feature-icon {
-            font-size: 3rem;
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-magenta));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 2rem;
+        .dc-bar {
+            height: 100%; border-radius: 3px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 0;
         }
+        .dc-r .dc-bar { background: var(--r); }
+        .dc-g .dc-bar { background: var(--g); }
+        .dc-b .dc-bar { background: var(--b); }
+        .dc-y .dc-bar { background: var(--y); }
 
-        .feature-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--cosmic-white);
+        .dc-score {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.8125rem; font-weight: 600;
+            width: 40px; text-align: right;
         }
+        .dc-r .dc-score { color: var(--r); }
+        .dc-g .dc-score { color: var(--g); }
+        .dc-b .dc-score { color: var(--b); }
+        .dc-y .dc-score { color: var(--y); }
 
-        .feature-description {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.8);
+        .demo-summary {
+            margin-top: 1.25rem; padding: 1rem;
+            background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+            border-radius: 8px;
         }
-
-        /* Contact Section */
-        .quantum-contact {
-            padding: 10rem 0;
-            background: var(--glass-light);
-            backdrop-filter: blur(20px);
+        .demo-summary-title {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.6875rem; text-transform: uppercase;
+            letter-spacing: 0.1em; color: var(--text-3); margin-bottom: 0.5rem;
         }
+        .demo-summary-text { font-size: 0.8125rem; color: var(--text-2); line-height: 1.6; }
 
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        /* ═══ How we think ═══ */
+        .approach-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 4rem; align-items: start;
         }
-
-        .contact-form {
-            background: var(--glass-heavy);
-            padding: 4rem;
-            border-radius: 30px;
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            backdrop-filter: blur(20px);
-        }
-
-        .form-group {
-            margin-bottom: 2rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--cosmic-white);
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 1rem 1.5rem;
-            background: var(--glass-light);
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            border-radius: 15px;
-            color: var(--cosmic-white);
-            font-size: 1rem;
+        .approach-principles { display: flex; flex-direction: column; gap: 1rem; }
+        .principle {
+            display: flex; gap: 1rem; align-items: flex-start;
+            padding: 1.25rem; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: var(--radius);
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
         }
+        .principle:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
+        .principle-marker { width: 4px; height: 32px; border-radius: 4px; flex-shrink: 0; margin-top: 2px; }
+        .principle:nth-child(1) .principle-marker { background: var(--r); }
+        .principle:nth-child(2) .principle-marker { background: var(--g); }
+        .principle:nth-child(3) .principle-marker { background: var(--b); }
+        .principle:nth-child(4) .principle-marker { background: var(--y); }
+        .principle-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.9375rem; margin-bottom: 0.25rem; }
+        .principle-text { font-size: 0.8125rem; color: var(--text-2); line-height: 1.6; }
 
-        .form-input:focus {
-            outline: none;
-            border-color: var(--neon-cyan);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        /* Framework visual */
+        .framework-visual {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 2.5rem;
+            position: relative; overflow: hidden;
         }
-
-        .form-input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .form-textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(10, 10, 10, 0.95);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                padding: 2rem;
-                border-top: 1px solid rgba(0, 255, 255, 0.2);
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .mobile-toggle {
-                display: flex;
-            }
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .quantum-visual {
-                height: 400px;
-            }
-
-            .rgby-cube {
-                width: 200px;
-                height: 200px;
-            }
-
-            .cube-face {
-                width: 200px;
-                height: 200px;
-                font-size: 3rem;
-            }
-
-            .face-front { transform: rotateY(0deg) translateZ(100px); }
-            .face-back { transform: rotateY(180deg) translateZ(100px); }
-            .face-right { transform: rotateY(90deg) translateZ(100px); }
-            .face-left { transform: rotateY(-90deg) translateZ(100px); }
-            .face-top { transform: rotateX(90deg) translateZ(100px); }
-            .face-bottom { transform: rotateX(-90deg) translateZ(100px); }
-
-            .quantum-stats {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .contact-form {
-                padding: 2rem;
-            }
-
-            .quantum-ctas {
-                justify-content: center;
-            }
-        }
-
-        /* Loading Animation */
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--void-black);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        .loading-overlay.hidden {
-            opacity: 0;
+        .framework-visual::after {
+            content: ''; position: absolute; top: -40%; right: -40%;
+            width: 80%; height: 80%;
+            background: radial-gradient(circle, rgba(59,130,246,0.04) 0%, transparent 70%);
             pointer-events: none;
         }
+        .fw-title {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.6875rem; text-transform: uppercase;
+            letter-spacing: 0.15em; color: var(--text-3); margin-bottom: 1.5rem;
+        }
+        .fw-channels { display: flex; flex-direction: column; gap: 0.75rem; position: relative; z-index: 1; }
+        .fw-channel {
+            display: flex; align-items: center; gap: 1rem;
+            padding: 0.875rem 1.25rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border); border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .fw-channel:hover { background: rgba(255,255,255,0.04); border-color: var(--border-hover); }
+        .fw-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+        .fw-channel:nth-child(1) .fw-dot { background: var(--r); box-shadow: 0 0 12px rgba(232,68,58,0.4); }
+        .fw-channel:nth-child(2) .fw-dot { background: var(--g); box-shadow: 0 0 12px rgba(52,199,89,0.4); }
+        .fw-channel:nth-child(3) .fw-dot { background: var(--b); box-shadow: 0 0 12px rgba(59,130,246,0.4); }
+        .fw-channel:nth-child(4) .fw-dot { background: var(--y); box-shadow: 0 0 12px rgba(250,204,21,0.4); }
+        .fw-channel-info { flex: 1; }
+        .fw-channel-name { font-family: 'DM Mono', monospace; font-size: 0.8125rem; color: var(--text); }
+        .fw-channel-desc { font-size: 0.6875rem; color: var(--text-3); margin-top: 0.125rem; }
+        .fw-channel-bar { width: 60px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.06); overflow: hidden; }
+        .fw-channel-fill { height: 100%; border-radius: 2px; }
+        .fw-channel:nth-child(1) .fw-channel-fill { width: 85%; background: var(--r); }
+        .fw-channel:nth-child(2) .fw-channel-fill { width: 92%; background: var(--g); }
+        .fw-channel:nth-child(3) .fw-channel-fill { width: 78%; background: var(--b); }
+        .fw-channel:nth-child(4) .fw-channel-fill { width: 65%; background: var(--y); }
 
-        .loading-animation {
-            width: 100px;
-            height: 100px;
-            border: 3px solid transparent;
-            border-top: 3px solid var(--neon-cyan);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        /* ═══ Founder ═══ */
+        .founder-section {
+            border-top: 1px solid var(--border);
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .founder-grid {
+            display: grid; grid-template-columns: 1fr 1.5fr;
+            gap: 4rem; align-items: center;
+        }
+
+        .founder-visual {
+            position: relative;
+        }
+
+        .founder-placeholder {
+            width: 100%; aspect-ratio: 1;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+        .founder-placeholder::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(232,68,58,0.05), rgba(52,199,89,0.05), rgba(59,130,246,0.05), rgba(250,204,21,0.05));
+        }
+        .founder-initials {
+            font-family: 'Syne', sans-serif; font-size: 3rem;
+            font-weight: 800; color: var(--text-3);
+            position: relative; z-index: 1;
+        }
+
+        .founder-name {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.75rem; font-weight: 800;
+            letter-spacing: -0.03em; margin-bottom: 0.25rem;
+        }
+        .founder-role {
+            font-size: 0.9375rem; color: var(--text-3);
+            font-weight: 500; margin-bottom: 1.5rem;
+        }
+        .founder-quote {
+            font-size: 1.125rem; color: var(--text-2);
+            line-height: 1.7; margin-bottom: 1.5rem;
+            font-style: italic; position: relative;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--b);
+        }
+        .founder-bio {
+            font-size: 0.9375rem; color: var(--text-2);
+            line-height: 1.7;
+        }
+        .founder-bio + .founder-bio { margin-top: 1rem; }
+
+        /* ═══ Whitepaper CTA ═══ */
+        .whitepaper-section {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-elevated);
+        }
+        .whitepaper-inner {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 4rem; align-items: center;
+        }
+        .whitepaper-preview {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 2.5rem;
+            position: relative;
+        }
+        .wp-doc-header {
+            display: flex; align-items: center; gap: 0.75rem;
+            margin-bottom: 1.5rem; padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .wp-doc-icon {
+            width: 36px; height: 36px; border-radius: 8px;
+            background: rgba(59,130,246,0.12); color: var(--b);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .wp-doc-meta { flex: 1; }
+        .wp-doc-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.875rem; font-weight: 700;
+        }
+        .wp-doc-type {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.6875rem; color: var(--text-3);
+        }
+        .wp-toc { list-style: none; }
+        .wp-toc li {
+            padding: 0.5rem 0; border-bottom: 1px solid var(--border);
+            font-size: 0.8125rem; color: var(--text-2);
+            display: flex; align-items: center; gap: 0.75rem;
+        }
+        .wp-toc li:last-child { border-bottom: none; }
+        .wp-toc-num {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.6875rem; color: var(--text-3); width: 24px;
+        }
+        .wp-badge {
+            display: inline-block; padding: 0.2rem 0.5rem;
+            background: rgba(250,204,21,0.1); border: 1px solid rgba(250,204,21,0.2);
+            border-radius: 4px; font-family: 'DM Mono', monospace;
+            font-size: 0.6rem; color: var(--y); margin-left: auto;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+
+        .whitepaper-form {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 2.5rem;
+        }
+        .wp-form-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem; font-weight: 800;
+            letter-spacing: -0.02em; margin-bottom: 0.75rem;
+        }
+        .wp-form-desc {
+            font-size: 0.9375rem; color: var(--text-2);
+            margin-bottom: 1.5rem; line-height: 1.6;
+        }
+        .wp-form-group { margin-bottom: 1rem; }
+        .wp-form-group label {
+            display: block; font-size: 0.8125rem;
+            font-weight: 500; color: var(--text-2); margin-bottom: 0.375rem;
+        }
+        .wp-form-group input, .wp-form-group select {
+            width: 100%; padding: 0.75rem 1rem;
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: 8px; color: var(--text);
+            font-size: 0.9375rem; font-family: 'DM Sans', sans-serif;
+            outline: none; transition: border-color 0.2s;
+        }
+        .wp-form-group input:focus, .wp-form-group select:focus { border-color: var(--b); }
+        .wp-form-group input::placeholder { color: var(--text-3); }
+
+        .wp-submit {
+            width: 100%; padding: 0.875rem;
+            background: var(--b); color: white;
+            border: none; border-radius: 10px;
+            font-size: 0.9375rem; font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer; transition: all 0.2s; margin-top: 0.5rem;
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+        }
+        .wp-submit:hover { background: #2563EB; transform: translateY(-1px); }
+        .wp-success {
+            display: none; padding: 1rem; text-align: center;
+            background: rgba(52,199,89,0.1); border: 1px solid rgba(52,199,89,0.2);
+            border-radius: 10px; color: var(--g); font-size: 0.875rem;
+        }
+
+        /* ═══ AI Act Banner ═══ */
+        .ai-act-banner {
+            padding: 3.5rem 0; position: relative; z-index: 1;
+            border-bottom: 1px solid var(--border);
+        }
+        .ai-act-inner {
+            display: flex; align-items: center; gap: 2.5rem;
+            padding: 2.5rem; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: var(--radius-lg);
+            position: relative; overflow: hidden;
+        }
+        .ai-act-inner::before {
+            content: ''; position: absolute;
+            top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, var(--r), var(--g), var(--b), var(--y));
+        }
+        .ai-act-icon {
+            width: 56px; height: 56px; border-radius: 14px;
+            background: rgba(250,204,21,0.1); color: var(--y);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .ai-act-content { flex: 1; }
+        .ai-act-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.25rem; font-weight: 800;
+            margin-bottom: 0.375rem;
+        }
+        .ai-act-text { font-size: 0.9375rem; color: var(--text-2); line-height: 1.6; }
+        .ai-act-cta {
+            padding: 0.625rem 1.5rem; background: transparent;
+            border: 1px solid var(--border-hover); border-radius: 8px;
+            color: var(--text); text-decoration: none;
+            font-size: 0.875rem; font-weight: 600; white-space: nowrap;
+            transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .ai-act-cta:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); }
+
+        /* ═══ Vision ═══ */
+        .vision-section { background: var(--bg-elevated); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+        .vision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .vision-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .vision-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+        .vision-phase {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.6875rem; text-transform: uppercase;
+            letter-spacing: 0.1em; margin-bottom: 1rem;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .vision-card:nth-child(1) .vision-phase { color: var(--r); }
+        .vision-card:nth-child(2) .vision-phase { color: var(--g); }
+        .vision-card:nth-child(3) .vision-phase { color: var(--b); }
+        .phase-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+        .vision-title { font-family: 'Syne', sans-serif; font-size: 1.125rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .vision-desc { font-size: 0.875rem; color: var(--text-2); line-height: 1.6; }
+
+        .vision-cta {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 2rem 2.5rem; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: var(--radius-lg);
+            margin-top: 1.25rem;
+        }
+        .vision-cta-text { display: flex; align-items: center; gap: 1.25rem; }
+        .vision-badge {
+            font-family: 'DM Mono', monospace; font-size: 0.8125rem;
+            padding: 0.4rem 1rem; background: rgba(52,199,89,0.1);
+            border: 1px solid rgba(52,199,89,0.2); border-radius: 6px; color: var(--g);
+        }
+        .vision-label { font-size: 1rem; font-weight: 600; }
+        .vision-actions { display: flex; gap: 0.75rem; }
+
+        /* ═══ Blog ═══ */
+        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+        .blog-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 2rem;
+            transition: all 0.3s ease; text-decoration: none; color: inherit;
+            display: flex; flex-direction: column;
+        }
+        .blog-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+
+        .blog-tag {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.6875rem; text-transform: uppercase;
+            letter-spacing: 0.1em; margin-bottom: 1rem;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .blog-card:nth-child(1) .blog-tag { color: var(--r); }
+        .blog-card:nth-child(2) .blog-tag { color: var(--b); }
+        .blog-card:nth-child(3) .blog-tag { color: var(--g); }
+
+        .blog-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.125rem; font-weight: 700;
+            margin-bottom: 0.75rem; letter-spacing: -0.02em;
+            line-height: 1.3;
+        }
+        .blog-excerpt { font-size: 0.875rem; color: var(--text-2); line-height: 1.6; flex: 1; }
+        .blog-meta {
+            margin-top: 1.25rem; padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.75rem; color: var(--text-3);
+            display: flex; justify-content: space-between;
+        }
+        .blog-read {
+            color: var(--b); font-weight: 500;
+            display: flex; align-items: center; gap: 0.25rem;
+        }
+
+        /* ═══ Contact ═══ */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
+        .contact-form {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 2.5rem;
+        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-label { display: block; font-size: 0.8125rem; font-weight: 500; color: var(--text-2); margin-bottom: 0.5rem; }
+        .form-input {
+            width: 100%; padding: 0.75rem 1rem;
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: 8px; color: var(--text);
+            font-size: 0.9375rem; font-family: 'DM Sans', sans-serif;
+            transition: all 0.2s ease; outline: none;
+        }
+        .form-input:focus { border-color: var(--b); box-shadow: 0 0 0 3px rgba(59,130,246,0.1); }
+        .form-input::placeholder { color: var(--text-3); }
+        .form-textarea { min-height: 120px; resize: vertical; }
+        .form-submit {
+            width: 100%; padding: 0.875rem;
+            background: var(--text); color: var(--bg);
+            border: none; border-radius: 10px;
+            font-size: 0.9375rem; font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer; transition: all 0.2s ease;
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+        }
+        .form-submit:hover { background: #E4E4E7; transform: translateY(-1px); }
+        .form-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+        .form-submit .spinner {
+            display: none; width: 16px; height: 16px;
+            border: 2px solid transparent; border-top-color: var(--bg);
+            border-radius: 50%; animation: spin 0.6s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ═══ Footer ═══ */
+        .footer { border-top: 1px solid var(--border); padding: 3rem 0; position: relative; z-index: 1; }
+        .footer-top {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .footer-brand-col .footer-logo {
+            font-family: 'Syne', sans-serif; font-size: 1.25rem;
+            font-weight: 800; color: var(--text); letter-spacing: -0.03em;
+            display: flex; align-items: center; gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .footer-brand-col .footer-tagline {
+            font-size: 0.875rem; color: var(--text-3);
+            max-width: 280px; line-height: 1.6;
+        }
+        .footer-col-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.8125rem; font-weight: 700;
+            margin-bottom: 1rem; color: var(--text);
+        }
+        .footer-col a {
+            display: block; color: var(--text-3);
+            text-decoration: none; font-size: 0.8125rem;
+            padding: 0.25rem 0; transition: color 0.2s;
+        }
+        .footer-col a:hover { color: var(--text-2); }
+
+        .footer-bottom {
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .footer-copy { font-size: 0.75rem; color: var(--text-3); }
+        .footer-dots { display: flex; gap: 6px; }
+        .footer-dots span { width: 8px; height: 8px; border-radius: 50%; transition: transform 0.3s ease; }
+        .footer-dots span:hover { transform: scale(1.5); }
+        .footer-dots span:nth-child(1) { background: var(--r); }
+        .footer-dots span:nth-child(2) { background: var(--g); }
+        .footer-dots span:nth-child(3) { background: var(--b); }
+        .footer-dots span:nth-child(4) { background: var(--y); }
+
+        /* ═══ Scroll Reveal ═══ */
+        .reveal {
+            opacity: 0; transform: translateY(24px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        /* ═══ Responsive ═══ */
+        @media (max-width: 1024px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+            .approach-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .domains-grid { grid-template-columns: 1fr 1fr; }
+            .demo-grid { grid-template-columns: 1fr; }
+            .founder-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .whitepaper-inner { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0; right: 0;
+                background: rgba(9,9,11,0.95); backdrop-filter: blur(20px);
+                flex-direction: column; padding: 1.5rem;
+                border-bottom: 1px solid var(--border); gap: 0.25rem;
+            }
+            .nav-links.active { display: flex; }
+            .nav-cta { margin-left: 0; margin-top: 0.5rem; text-align: center; }
+            .mobile-toggle { display: flex; }
+
+            .hero { padding: 7rem 0 4rem; }
+            .signal-grid { width: 280px; height: 280px; }
+            .domains-grid { grid-template-columns: 1fr; }
+            .vision-grid { grid-template-columns: 1fr; }
+            .blog-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .proof-stat:nth-child(2)::after { display: none; }
+            .vision-cta { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+            .ai-act-inner { flex-direction: column; text-align: center; gap: 1.5rem; }
+            .footer-top { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; }
+            .waitlist-inline { flex-direction: column; }
+        }
+        @media (max-width: 480px) {
+            .signal-grid { width: 240px; height: 240px; }
+            .hero-title { font-size: 2.25rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-animation"></div>
-    </div>
+    <div class="ambient ambient-1"></div>
+    <div class="ambient ambient-2"></div>
 
-    <!-- Cosmic Background -->
-    <div class="cosmic-background"></div>
-    
-    <!-- Floating Particles -->
-    <div class="particles" id="particles"></div>
-
-    <!-- Ultra Modern Navigation -->
-    <nav class="ultra-nav" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-brand">RGBY.ai</a>
-            
-            <div class="mobile-toggle" id="mobileToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-            <div class="nav-menu" id="navMenu">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#features" class="nav-link">Features</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="#launch" class="nav-link">Launch</a>
+    <!-- Nav -->
+    <nav class="nav" id="navbar">
+        <div class="container nav-inner">
+            <a href="#home" class="nav-brand">
+                <span class="brand-dots"><span></span><span></span><span></span><span></span></span>
+                RGBY.ai
+            </a>
+            <div class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
+            <div class="nav-links" id="navLinks">
+                <a href="#domains" class="nav-link">What we do</a>
+                <a href="#demo" class="nav-link">Try it</a>
+                <a href="#approach" class="nav-link">How we think</a>
+                <a href="#blog" class="nav-link">Insights</a>
+                <a href="#contact" class="nav-link nav-cta">Get in touch</a>
             </div>
         </div>
     </nav>
 
-    <!-- Revolutionary Hero Section -->
-    <section id="home" class="quantum-hero">
-        <div class="hero-grid">
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="container hero-inner">
             <div class="hero-content">
-                <div class="quantum-badge">🚀 Cognitive Architecture Revolution</div>
-                
-                <h1 class="quantum-title">
-                    <span class="title-line">
-                        <span class="title-text">RGBY.ai</span>
-                    </span>
-                    <span class="title-line">
-                        <span class="title-text">Regulatory</span>
-                    </span>
-                    <span class="title-line">
-                        <span class="title-text">Symmetry</span>
-                    </span>
+                <div class="hero-eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    Birmingham, UK
+                </div>
+
+                <h1 class="hero-title">
+                    The next generation<br>
+                    of <span class="accent-b">AI</span> is<br>
+                    <span class="accent-r">d</span><span class="accent-g">e</span><span class="accent-b">t</span><span class="accent-y">e</span>rministic.
                 </h1>
-                
-                <p class="quantum-subtitle">
-                    Experience the future of AI with revolutionary cognitive architecture. 
-                    Where regulatory complexity meets intelligent automation, creating perfect symmetry 
-                    between innovation and compliance.
+
+                <p class="hero-desc">
+                    We build AI systems that don't guess — they reason. Governance-grade
+                    cognitive architecture for organisations where accuracy isn't optional and every decision needs an audit trail.
                 </p>
-                
-                <div class="quantum-ctas">
-                    <a href="#contact" class="quantum-btn btn-primary">
-                        Get Started
-                        <i class="fas fa-rocket"></i>
+
+                <!-- Waitlist -->
+                <form class="waitlist-inline" id="waitlistForm">
+                    <input type="email" placeholder="you@company.com" required id="waitlistEmail">
+                    <button type="submit">Join the waitlist</button>
+                </form>
+                <div class="waitlist-success" id="waitlistSuccess">You're on the list. We'll be in touch.</div>
+                <div class="waitlist-count">
+                    <span class="wc-dot"></span>
+                    <span id="waitlistCounter">Join 200+ people already on the waitlist</span>
+                </div>
+
+                <div class="hero-secondary-links">
+                    <a href="#demo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        Try the live demo
                     </a>
-                    <a href="#about" class="quantum-btn btn-secondary">
-                        Learn More
-                        <i class="fas fa-arrow-down"></i>
+                    <a href="#whitepaper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+                        Read the whitepaper
                     </a>
                 </div>
             </div>
-            
-            <div class="quantum-visual">
-                <div class="rgby-cube">
-                    <div class="cube-face face-front">R</div>
-                    <div class="cube-face face-back">&#71;</div>
-                    <div class="cube-face face-right">B</div>
-                    <div class="cube-face face-left">Y</div>
-                    <div class="cube-face face-top">AI</div>
-                    <div class="cube-face face-bottom">∞</div>
+
+            <div class="hero-visual">
+                <div>
+                    <div class="signal-grid">
+                        <div class="signal-quadrant sq-r">
+                            <div class="sq-letter">R</div>
+                            <div class="sq-label">Risk & Urgency</div>
+                        </div>
+                        <div class="signal-quadrant sq-g">
+                            <div class="sq-letter">G</div>
+                            <div class="sq-label">Governance</div>
+                        </div>
+                        <div class="signal-quadrant sq-b">
+                            <div class="sq-letter">B</div>
+                            <div class="sq-label">Behavioural</div>
+                        </div>
+                        <div class="signal-quadrant sq-y">
+                            <div class="sq-letter">Y</div>
+                            <div class="sq-label">Yield & Output</div>
+                        </div>
+                    </div>
+                    <div class="signal-caption">four-channel cognitive framework</div>
                 </div>
-            </div>
-        </div>
-        
-        <div class="quantum-stats">
-            <div class="stat-quantum">
-                <div class="stat-number">∞</div>
-                <div class="stat-label">Possibilities</div>
-            </div>
-            <div class="stat-quantum">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Active</div>
-            </div>
-            <div class="stat-quantum">
-                <div class="stat-number">AI</div>
-                <div class="stat-label">Powered</div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="quantum-about">
-        <div class="section-header">
-            <h2 class="section-title">Advanced Features</h2>
-            <p class="section-subtitle">
-                Cutting-edge capabilities that redefine how AI systems interact with regulatory environments
-                and deliver unprecedented compliance intelligence.
+    <!-- Social Proof Numbers -->
+    <div class="proof-strip">
+        <div class="container">
+            <div class="proof-grid">
+                <div class="proof-stat reveal">
+                    <div class="proof-number color-r">65,000+</div>
+                    <div class="proof-label">Documents analysed in a single forensic investigation</div>
+                </div>
+                <div class="proof-stat reveal reveal-delay-1">
+                    <div class="proof-number color-g">4</div>
+                    <div class="proof-label">Signal channels in every classification</div>
+                </div>
+                <div class="proof-stat reveal reveal-delay-2">
+                    <div class="proof-number color-b">100%</div>
+                    <div class="proof-label">Deterministic & reproducible outputs</div>
+                </div>
+                <div class="proof-stat reveal reveal-delay-3">
+                    <div class="proof-number color-y">0</div>
+                    <div class="proof-label">Black boxes in the pipeline</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manifesto -->
+    <div class="manifesto">
+        <div class="container">
+            <p class="manifesto-text reveal">
+                Most AI is built to impress. <span class="dim">We build AI that holds up under scrutiny.</span>
+                Deterministic pipelines. Auditable outputs. Systems that explain
+                themselves <span class="dim">because in the real world, "trust me" isn't good enough.</span>
             </p>
-        </div>
-        
-        <div class="features-grid">
-            <div class="feature-quantum">
-                <div class="feature-icon">
-                    <i class="fas fa-cogs"></i>
-                </div>
-                <h3 class="feature-title">Real-time Processing</h3>
-                <p class="feature-description">
-                    Lightning-fast analysis of regulatory changes and compliance requirements with 
-                    instant adaptation to new rules and frameworks as they emerge globally.
-                </p>
-            </div>
-            
-            <div class="feature-quantum">
-                <div class="feature-icon">
-                    <i class="fas fa-network-wired"></i>
-                </div>
-                <h3 class="feature-title">Neural Networks</h3>
-                <p class="feature-description">
-                    Advanced deep learning models that understand regulatory language nuances and 
-                    provide contextual insights for complex compliance scenarios.
-                </p>
-            </div>
-            
-            <div class="feature-quantum">
-                <div class="feature-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3 class="feature-title">Predictive Analytics</h3>
-                <p class="feature-description">
-                    Forecast regulatory trends and potential compliance risks before they impact 
-                    your business operations and strategic planning.
-                </p>
-            </div>
-            
-            <div class="feature-quantum">
-                <div class="feature-icon">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <h3 class="feature-title">Global Coverage</h3>
-                <p class="feature-description">
-                    Comprehensive regulatory intelligence across multiple jurisdictions and 
-                    industries with real-time updates and cross-border compliance mapping.
-                </p>
+            <div class="manifesto-location reveal reveal-delay-1">
+                <span class="location-dot"></span>
+                Built in Birmingham. Designed for the world.
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- About Section -->
-    <section id="about" class="quantum-about">
-        <div class="section-header">
-            <h2 class="section-title">Revolutionary Architecture</h2>
-            <p class="section-subtitle">
-                Pioneering the future of cognitive AI systems that understand, adapt, and evolve 
-                with regulatory environments while maintaining perfect innovation-compliance symmetry.
-            </p>
-        </div>
-        
-        <div class="features-grid">
-            <div class="feature-quantum">
-                <div class="feature-icon">
-                    <i class="fas fa-brain"></i>
-                </div>
-                <h3 class="feature-title">Cognitive Architecture</h3>
-                <p class="feature-description">
-                    Advanced AI systems that think and reason like humans, understanding the 
-                    nuances of regulatory frameworks and adapting to complex compliance requirements 
-                    with unprecedented intelligence.
-                </p>
-            </div>
-            
-            <div class="feature-quantum">
-                <div class="feature-icon">
-                    <i class="fas fa-balance-scale"></i>
-                </div>
-                <h3 class="feature-title">Regulatory Symmetry</h3>
-                <p class="feature-description">
-                    Perfect balance between innovation and compliance. Our proprietary framework 
-                    ensures that regulatory requirements enhance rather than hinder technological 
-                    advancement.
-                </p>
-            </div>
-            
-            <div class="feature-quantum">
-                <div class="feature-icon">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <h3 class="feature-title">Quantum Intelligence</h3>
-                <p class="feature-description">
-                    Next-generation AI that operates at the speed of thought, processing vast 
-                    regulatory databases and providing real-time insights for decision-making 
-                    and compliance optimization.
-                </p>
-            </div>
-            
-            <div class="feature-quantum">
-                <div class="feature-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <h3 class="feature-title">Adaptive Security</h3>
-                <p class="feature-description">
-                    Enterprise-grade security that evolves with threats. Our systems learn and 
-                    adapt to new security challenges while maintaining compliance with the 
-                    strictest regulatory standards.
-                </p>
-            </div>
-        </div>
-    </section>
+    <!-- Domains -->
+    <section id="domains" class="section">
+        <div class="container">
+            <div class="section-label reveal">What we do</div>
+            <h2 class="section-title reveal">AI for the problems<br>that matter.</h2>
+            <p class="section-desc reveal">We work across governance, forensics, and decision intelligence — building systems that organisations trust with their hardest problems.</p>
 
-    <!-- Launch Section -->
-    <section id="launch" class="quantum-contact" style="background: linear-gradient(135deg, var(--void-black) 0%, var(--dark-matter) 100%);">
-        <div class="contact-container">
-            <div class="section-header">
-                <h2 class="section-title">Launch Timeline</h2>
-                <p class="section-subtitle">
-                    Revolutionary cognitive architecture is coming soon. Be part of the regulatory intelligence revolution.
-                </p>
-            </div>
-            
-            <div class="features-grid" style="margin-bottom: 4rem;">
-                <div class="feature-quantum">
-                    <div class="feature-icon">
-                        <i class="fas fa-rocket"></i>
+            <div class="domains-grid">
+                <div class="domain-card reveal">
+                    <div class="domain-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
-                    <h3 class="feature-title">Beta Launch</h3>
-                    <p class="feature-description">
-                        Early access program for select partners and enterprise clients. 
-                        Limited spots available for the initial testing phase.
-                    </p>
+                    <h3 class="domain-title">Governance AI</h3>
+                    <p class="domain-desc">Production-grade cognitive governance for AI systems in regulated environments. Safety validation, compliance chains, and adaptive guardrails that actually work.</p>
                 </div>
-                
-                <div class="feature-quantum">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
+                <div class="domain-card reveal reveal-delay-1">
+                    <div class="domain-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
                     </div>
-                    <h3 class="feature-title">Partner Program</h3>
-                    <p class="feature-description">
-                        Strategic partnerships with regulatory bodies and compliance organizations 
-                        to ensure comprehensive coverage and accuracy.
-                    </p>
+                    <h3 class="domain-title">Forensic intelligence</h3>
+                    <p class="domain-desc">Audit-grade analysis of large document sets and communications. Pattern detection, timeline reconstruction, and anomaly flagging across thousands of records.</p>
                 </div>
-                
-                <div class="feature-quantum">
-                    <div class="feature-icon">
-                        <i class="fas fa-star"></i>
+                <div class="domain-card reveal reveal-delay-2">
+                    <div class="domain-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
                     </div>
-                    <h3 class="feature-title">Full Release</h3>
-                    <p class="feature-description">
-                        Complete platform availability with all cognitive architecture features 
-                        and global regulatory intelligence capabilities.
-                    </p>
+                    <h3 class="domain-title">Board dynamics</h3>
+                    <p class="domain-desc">Real-time behavioural analysis for boardrooms and leadership teams. Cognitive profiling, stability tracking, and predictive stress simulation.</p>
                 </div>
-            </div>
-            
-            <div class="text-center">
-                <div class="quantum-badge" style="margin-bottom: 2rem; font-size: 1.1rem; padding: 1rem 3rem;">
-                    🚀 Coming Q2 2025
+                <div class="domain-card reveal reveal-delay-3">
+                    <div class="domain-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3 class="domain-title">Cognitive architecture</h3>
+                    <p class="domain-desc">The RGBY framework — a four-channel classification system that encodes urgency, process, compliance, and uncertainty into every decision an AI makes.</p>
                 </div>
-                <div class="quantum-ctas">
-                    <a href="#contact" class="quantum-btn btn-primary">
-                        Join Beta Program
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#contact" class="quantum-btn btn-secondary">
-                        Request Demo
-                        <i class="fas fa-play"></i>
-                    </a>
+                <div class="domain-card reveal reveal-delay-4">
+                    <div class="domain-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <h3 class="domain-title">Drift detection</h3>
+                    <p class="domain-desc">Continuous monitoring for when systems, people, or organisations deviate from baseline. Rolling temporal analysis with threshold-based alerting.</p>
+                </div>
+                <div class="domain-card reveal reveal-delay-5">
+                    <div class="domain-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
+                    </div>
+                    <h3 class="domain-title">Causal modelling</h3>
+                    <p class="domain-desc">Bayesian networks and causal inference engines that map how systems actually behave — not how you hope they do. Built for complexity.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="quantum-contact">
-        <div class="contact-container">
-            <div class="section-header">
-                <h2 class="section-title">Connect with the Future</h2>
-                <p class="section-subtitle">
-                    Ready to revolutionize your approach to regulatory intelligence? 
-                    Let's start building the future together.
-                </p>
+    <!-- Live Demo -->
+    <section id="demo" class="section demo-section">
+        <div class="container">
+            <div class="section-label reveal">Try it</div>
+            <h2 class="section-title reveal">See RGBY classification<br>in action.</h2>
+            <p class="section-desc reveal">Paste any text and watch it get classified across the four RGBY channels in real-time. This is a simplified version of the engine that powers our production systems.</p>
+
+            <div class="demo-grid">
+                <div class="demo-box reveal">
+                    <div class="demo-input-area">
+                        <textarea id="demoInput" placeholder="Paste or type any text here — a board memo, compliance report, email, risk assessment..."></textarea>
+                        <button class="demo-btn" id="demoBtn" onclick="runDemo()">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            Analyse with RGBY
+                        </button>
+                        <div class="demo-presets">
+                            <span class="demo-preset" onclick="loadPreset('risk')">Risk alert</span>
+                            <span class="demo-preset" onclick="loadPreset('compliance')">Compliance report</span>
+                            <span class="demo-preset" onclick="loadPreset('board')">Board memo</span>
+                            <span class="demo-preset" onclick="loadPreset('drift')">Performance drift</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-box reveal reveal-delay-1">
+                    <div id="demoPlaceholder" style="text-align: center; padding: 3rem 1rem;">
+                        <div style="color: var(--text-3); font-size: 0.9375rem; margin-bottom: 0.5rem;">Waiting for input</div>
+                        <div style="color: var(--text-3); font-size: 0.8125rem; opacity: 0.5;">Enter text and click analyse to see RGBY classification</div>
+                    </div>
+                    <div class="demo-results" id="demoResults">
+                        <div class="demo-result-header">RGBY Signal Analysis</div>
+
+                        <div class="demo-channel dc-r">
+                            <div class="dc-dot"></div>
+                            <div class="dc-info">
+                                <div class="dc-name">Risk & Urgency</div>
+                                <div class="dc-signal" id="dcSignalR">—</div>
+                            </div>
+                            <div class="dc-bar-wrap"><div class="dc-bar" id="dcBarR"></div></div>
+                            <div class="dc-score" id="dcScoreR">—</div>
+                        </div>
+
+                        <div class="demo-channel dc-g">
+                            <div class="dc-dot"></div>
+                            <div class="dc-info">
+                                <div class="dc-name">Governance</div>
+                                <div class="dc-signal" id="dcSignalG">—</div>
+                            </div>
+                            <div class="dc-bar-wrap"><div class="dc-bar" id="dcBarG"></div></div>
+                            <div class="dc-score" id="dcScoreG">—</div>
+                        </div>
+
+                        <div class="demo-channel dc-b">
+                            <div class="dc-dot"></div>
+                            <div class="dc-info">
+                                <div class="dc-name">Behavioural</div>
+                                <div class="dc-signal" id="dcSignalB">—</div>
+                            </div>
+                            <div class="dc-bar-wrap"><div class="dc-bar" id="dcBarB"></div></div>
+                            <div class="dc-score" id="dcScoreB">—</div>
+                        </div>
+
+                        <div class="demo-channel dc-y">
+                            <div class="dc-dot"></div>
+                            <div class="dc-info">
+                                <div class="dc-name">Yield & Output</div>
+                                <div class="dc-signal" id="dcSignalY">—</div>
+                            </div>
+                            <div class="dc-bar-wrap"><div class="dc-bar" id="dcBarY"></div></div>
+                            <div class="dc-score" id="dcScoreY">—</div>
+                        </div>
+
+                        <div class="demo-summary">
+                            <div class="demo-summary-title">Classification Summary</div>
+                            <div class="demo-summary-text" id="demoSummary">—</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="name" class="form-label">Full Name *</label>
-                    <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email" class="form-label">Email Address *</label>
-                    <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="company" class="form-label">Company</label>
-                    <input type="text" id="company" name="company" class="form-input" placeholder="Your company name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject" class="form-label">Subject *</label>
-                    <select id="subject" name="subject" class="form-input" required>
-                        <option value="">Select a subject</option>
-                        <option value="general">General Inquiry</option>
-                        <option value="demo">Request Demo</option>
-                        <option value="partnership">Partnership</option>
-                        <option value="investment">Investment</option>
-                        <option value="careers">Careers</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message" class="form-label">Message *</label>
-                    <textarea id="message" name="message" class="form-input form-textarea" 
-                              placeholder="Tell us about your vision and how we can help bring it to life..." required></textarea>
-                </div>
-                
-                <button type="submit" class="quantum-btn btn-primary" style="width: 100%; justify-content: center;">
-                    <span class="btn-text">Send Message</span>
-                    <span class="btn-loading" style="display: none;">
-                        <i class="fas fa-spinner fa-spin"></i>
-                    </span>
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </form>
         </div>
     </section>
+
+    <!-- How we think -->
+    <section id="approach" class="section">
+        <div class="container">
+            <div class="approach-grid">
+                <div class="approach-content">
+                    <div class="section-label reveal">How we think</div>
+                    <h2 class="section-title reveal">Four channels.<br>One framework.</h2>
+                    <p class="section-desc reveal">Every signal gets classified. Every output gets an audit trail. The RGBY framework is the backbone of everything we build — encoding intent, risk, and confidence into every layer.</p>
+
+                    <div class="approach-principles">
+                        <div class="principle reveal">
+                            <div class="principle-marker"></div>
+                            <div>
+                                <div class="principle-title">Deterministic over probabilistic</div>
+                                <p class="principle-text">Core decision paths are reproducible and auditable. No black boxes, no "it depends." The same input always produces the same output.</p>
+                            </div>
+                        </div>
+                        <div class="principle reveal reveal-delay-1">
+                            <div class="principle-marker"></div>
+                            <div>
+                                <div class="principle-title">Governance as architecture</div>
+                                <p class="principle-text">Compliance isn't bolted on after — it's built into the system from day one. Every pipeline has guardrails, kill switches, and audit chains.</p>
+                            </div>
+                        </div>
+                        <div class="principle reveal reveal-delay-2">
+                            <div class="principle-marker"></div>
+                            <div>
+                                <div class="principle-title">Explainability by default</div>
+                                <p class="principle-text">If the system can't explain why it made a decision, it doesn't make one. Every output comes with provenance and reasoning.</p>
+                            </div>
+                        </div>
+                        <div class="principle reveal reveal-delay-3">
+                            <div class="principle-marker"></div>
+                            <div>
+                                <div class="principle-title">Built for the real world</div>
+                                <p class="principle-text">Not demos. Not proofs of concept. Production systems that handle messy data, edge cases, and the pressure of regulated environments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="framework-visual reveal">
+                    <div class="fw-title">RGBY Signal Classification</div>
+                    <div class="fw-channels">
+                        <div class="fw-channel">
+                            <div class="fw-dot"></div>
+                            <div class="fw-channel-info">
+                                <div class="fw-channel-name">Red — Risk & Urgency</div>
+                                <div class="fw-channel-desc">Threat level, escalation priority, intervention triggers</div>
+                            </div>
+                            <div class="fw-channel-bar"><div class="fw-channel-fill"></div></div>
+                        </div>
+                        <div class="fw-channel">
+                            <div class="fw-dot"></div>
+                            <div class="fw-channel-info">
+                                <div class="fw-channel-name">Green — Governance</div>
+                                <div class="fw-channel-desc">Process compliance, regulatory alignment, audit status</div>
+                            </div>
+                            <div class="fw-channel-bar"><div class="fw-channel-fill"></div></div>
+                        </div>
+                        <div class="fw-channel">
+                            <div class="fw-dot"></div>
+                            <div class="fw-channel-info">
+                                <div class="fw-channel-name">Blue — Behavioural</div>
+                                <div class="fw-channel-desc">Cognitive patterns, linguistic markers, drift signals</div>
+                            </div>
+                            <div class="fw-channel-bar"><div class="fw-channel-fill"></div></div>
+                        </div>
+                        <div class="fw-channel">
+                            <div class="fw-dot"></div>
+                            <div class="fw-channel-info">
+                                <div class="fw-channel-name">Yellow — Yield</div>
+                                <div class="fw-channel-desc">Confidence scoring, output quality, uncertainty bounds</div>
+                            </div>
+                            <div class="fw-channel-bar"><div class="fw-channel-fill"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder -->
+    <section class="section founder-section">
+        <div class="container">
+            <div class="founder-grid">
+                <div class="founder-visual reveal">
+                    <div class="founder-placeholder">
+                        <div class="founder-initials">RGBY</div>
+                    </div>
+                </div>
+                <div class="founder-content reveal reveal-delay-1">
+                    <div class="section-label">Who we are</div>
+                    <h2 class="founder-name">Built in Birmingham.</h2>
+                    <p class="founder-role">Not Silicon Valley. Not London. Birmingham.</p>
+
+                    <blockquote class="founder-quote">
+                        "The AI industry has a trust problem. Everyone's building systems that are impressive in demos and terrifying in production. We started RGBY because we believe the next generation of AI shouldn't just be powerful — it should be accountable."
+                    </blockquote>
+
+                    <p class="founder-bio">
+                        RGBY.ai was born from a simple observation: the more capable AI gets, the less we can explain what it's doing. That's fine for generating images. It's not fine when the output affects people's lives, livelihoods, or legal standing.
+                    </p>
+                    <p class="founder-bio">
+                        We build from Birmingham because great technology doesn't need a famous postcode. It needs rigour, conviction, and the kind of no-nonsense approach that this city was built on. We're not here to move fast and break things. We're here to build things that don't break.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Act Banner -->
+    <div class="ai-act-banner">
+        <div class="container">
+            <div class="ai-act-inner reveal">
+                <div class="ai-act-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                </div>
+                <div class="ai-act-content">
+                    <div class="ai-act-title">The EU AI Act is here. Are your systems ready?</div>
+                    <p class="ai-act-text">New regulations require AI systems to be transparent, auditable, and explainable. RGBY was designed for exactly this — governance-grade AI that meets compliance requirements by architecture, not afterthought.</p>
+                </div>
+                <a href="#contact" class="ai-act-cta">
+                    Talk to us
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Whitepaper -->
+    <section id="whitepaper" class="section whitepaper-section">
+        <div class="container">
+            <div class="whitepaper-inner">
+                <div class="whitepaper-preview reveal">
+                    <div class="wp-doc-header">
+                        <div class="wp-doc-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+                        </div>
+                        <div class="wp-doc-meta">
+                            <div class="wp-doc-title">The RGBY Framework</div>
+                            <div class="wp-doc-type">Technical Whitepaper — PDF, 24 pages</div>
+                        </div>
+                    </div>
+                    <ul class="wp-toc">
+                        <li><span class="wp-toc-num">01</span> Why deterministic AI matters</li>
+                        <li><span class="wp-toc-num">02</span> The four-channel classification model</li>
+                        <li><span class="wp-toc-num">03</span> CNVF: Cognitive Normative Validation <span class="wp-badge">Core</span></li>
+                        <li><span class="wp-toc-num">04</span> Governance-first pipeline architecture</li>
+                        <li><span class="wp-toc-num">05</span> Audit chains & compliance integration</li>
+                        <li><span class="wp-toc-num">06</span> Case patterns: forensics & board dynamics</li>
+                        <li><span class="wp-toc-num">07</span> EU AI Act alignment mapping</li>
+                    </ul>
+                </div>
+
+                <div class="reveal reveal-delay-1">
+                    <div class="whitepaper-form" id="wpFormContainer">
+                        <h3 class="wp-form-title">Download the whitepaper</h3>
+                        <p class="wp-form-desc">Get the full technical breakdown of the RGBY framework — how it works, why it matters, and how it maps to emerging AI regulation.</p>
+                        <form id="wpForm">
+                            <div class="wp-form-group">
+                                <label for="wpName">Name</label>
+                                <input type="text" id="wpName" placeholder="Your name" required>
+                            </div>
+                            <div class="wp-form-group">
+                                <label for="wpEmail">Work email</label>
+                                <input type="email" id="wpEmail" placeholder="you@company.com" required>
+                            </div>
+                            <div class="wp-form-group">
+                                <label for="wpRole">Role</label>
+                                <select id="wpRole">
+                                    <option value="">Select your role...</option>
+                                    <option value="cto">CTO / Technical Lead</option>
+                                    <option value="compliance">Compliance / Risk</option>
+                                    <option value="founder">Founder / CEO</option>
+                                    <option value="developer">Developer / Engineer</option>
+                                    <option value="researcher">Researcher / Academic</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="wp-submit">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                                Download PDF
+                            </button>
+                        </form>
+                    </div>
+                    <div class="wp-success" id="wpSuccess">Whitepaper sent to your inbox. Check your email.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Insights -->
+    <section id="blog" class="section">
+        <div class="container">
+            <div class="section-label reveal">Insights</div>
+            <h2 class="section-title reveal">Thinking out loud.</h2>
+            <p class="section-desc reveal">Our take on where AI is headed, why governance matters, and what most people get wrong about building systems that actually work.</p>
+
+            <div class="blog-grid">
+                <a href="#" class="blog-card reveal">
+                    <div class="blog-tag"><span class="phase-dot"></span> AI Governance</div>
+                    <h3 class="blog-title">Why "explainable AI" isn't enough — you need auditable AI</h3>
+                    <p class="blog-excerpt">Explainability is a feature. Auditability is an architecture. Most teams confuse the two, and it costs them when regulators come knocking.</p>
+                    <div class="blog-meta">
+                        <span>6 min read</span>
+                        <span class="blog-read">Read
+                            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <a href="#" class="blog-card reveal reveal-delay-1">
+                    <div class="blog-tag"><span class="phase-dot"></span> Deterministic AI</div>
+                    <h3 class="blog-title">The case against probabilistic decision-making in regulated environments</h3>
+                    <p class="blog-excerpt">When the same input can produce different outputs, you don't have a system — you have a liability. Here's how deterministic pipelines solve this.</p>
+                    <div class="blog-meta">
+                        <span>8 min read</span>
+                        <span class="blog-read">Read
+                            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <a href="#" class="blog-card reveal reveal-delay-2">
+                    <div class="blog-tag"><span class="phase-dot"></span> EU AI Act</div>
+                    <h3 class="blog-title">What the EU AI Act actually requires — and what most teams are ignoring</h3>
+                    <p class="blog-excerpt">The regulation is live. High-risk AI systems now need transparency, human oversight, and technical documentation. Here's what that means in practice.</p>
+                    <div class="blog-meta">
+                        <span>10 min read</span>
+                        <span class="blog-read">Read
+                            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision -->
+    <section id="vision" class="section vision-section">
+        <div class="container">
+            <div class="section-label reveal">Vision</div>
+            <h2 class="section-title reveal">Where we're headed.</h2>
+            <p class="section-desc reveal">The future of AI isn't about being the biggest. It's about being the most trusted.</p>
+
+            <div class="vision-grid">
+                <div class="vision-card reveal">
+                    <div class="vision-phase"><span class="phase-dot"></span> Now</div>
+                    <h3 class="vision-title">Building the foundation</h3>
+                    <p class="vision-desc">Developing and refining core RGBY systems across governance, forensics, and decision intelligence. Working with early partners who need AI they can actually trust.</p>
+                </div>
+                <div class="vision-card reveal reveal-delay-1">
+                    <div class="vision-phase"><span class="phase-dot"></span> Next</div>
+                    <h3 class="vision-title">Expanding the framework</h3>
+                    <p class="vision-desc">Taking the four-channel architecture into new domains. Deeper integrations, broader coverage, and partnerships with organisations shaping regulation.</p>
+                </div>
+                <div class="vision-card reveal reveal-delay-2">
+                    <div class="vision-phase"><span class="phase-dot"></span> Future</div>
+                    <h3 class="vision-title">Setting the standard</h3>
+                    <p class="vision-desc">Establishing RGBY as the governance layer for the next generation of AI. The default for any system that needs to explain itself.</p>
+                </div>
+            </div>
+
+            <div class="vision-cta reveal">
+                <div class="vision-cta-text">
+                    <span class="vision-badge">2026</span>
+                    <span class="vision-label">Partner programme opening soon</span>
+                </div>
+                <div class="vision-actions">
+                    <a href="#contact" class="btn btn-primary">Join early</a>
+                    <a href="#contact" class="btn btn-secondary">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <div>
+                    <div class="section-label reveal">Contact</div>
+                    <h2 class="section-title reveal">Let's talk.</h2>
+                    <p class="section-desc reveal">Whether you're exploring what deterministic AI could mean for your organisation, or you're ready to build — we'd like to hear from you.</p>
+                    <div class="manifesto-location reveal reveal-delay-1" style="margin-top: 0;">
+                        <span class="location-dot"></span>
+                        Birmingham, United Kingdom
+                    </div>
+                </div>
+
+                <form class="contact-form reveal" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name2" class="form-label">Name</label>
+                            <input type="text" id="name2" name="name" class="form-input" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email2" class="form-label">Email</label>
+                            <input type="email" id="email2" name="email" class="form-input" placeholder="you@company.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company2" class="form-label">Organisation</label>
+                            <input type="text" id="company2" name="company" class="form-input" placeholder="Organisation name">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject2" class="form-label">Subject</label>
+                            <select id="subject2" name="subject" class="form-input" required>
+                                <option value="">Select...</option>
+                                <option value="general">General enquiry</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="demo">Request a demo</option>
+                                <option value="investment">Investment</option>
+                                <option value="careers">Careers</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message2" class="form-label">Message</label>
+                        <textarea id="message2" name="message" class="form-input form-textarea" placeholder="What are you working on?" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit" id="submitBtn">
+                        <span class="btn-text">Send message</span>
+                        <span class="spinner"></span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <div class="footer-logo">
+                        <span class="brand-dots"><span></span><span></span><span></span><span></span></span>
+                        RGBY.ai
+                    </div>
+                    <p class="footer-tagline">Deterministic AI for governance, forensics, and decision intelligence. Built in Birmingham, designed for the world.</p>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Product</div>
+                    <a href="#domains">Governance AI</a>
+                    <a href="#domains">Forensic Intelligence</a>
+                    <a href="#domains">Board Dynamics</a>
+                    <a href="#demo">Live Demo</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Company</div>
+                    <a href="#approach">How We Think</a>
+                    <a href="#blog">Insights</a>
+                    <a href="#vision">Vision</a>
+                    <a href="#whitepaper">Whitepaper</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Connect</div>
+                    <a href="#contact">Contact</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Twitter / X</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">&copy; 2026 RGBY.ai. All rights reserved. Birmingham, UK.</div>
+                <div class="footer-dots">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // Initialize EmailJS
-        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+        // EmailJS
+        emailjs.init("YOUR_PUBLIC_KEY");
 
-        // Particle System
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const colors = ['#00ffff', '#ff0080', '#ffff00', '#0080ff', '#8000ff', '#00ff80'];
-            
-            setInterval(() => {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                particle.style.animationDelay = Math.random() * 2 + 's';
-                
-                particlesContainer.appendChild(particle);
-                
-                setTimeout(() => {
-                    particle.remove();
-                }, 15000);
-            }, 300);
-        }
+        // Nav scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 40);
+        });
 
-        // Navigation scroll effect
-        function handleNavScroll() {
-            const navbar = document.getElementById('navbar');
-            const scrolled = window.pageYOffset > 50;
-            
-            if (scrolled) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        }
+        // Mobile menu
+        document.getElementById('mobileToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => document.getElementById('navLinks').classList.remove('active'));
+        });
 
-        // Mobile menu toggle
-        function setupMobileMenu() {
-            const mobileToggle = document.getElementById('mobileToggle');
-            const navMenu = document.getElementById('navMenu');
-            
-            mobileToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
-        }
-
-        // Contact form handler
-        function setupContactForm() {
-            const form = document.getElementById('contactForm');
-            
-            form.addEventListener('submit', async (e) => {
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', e => {
                 e.preventDefault();
-                
-                const submitBtn = form.querySelector('.quantum-btn');
-                const btnText = submitBtn.querySelector('.btn-text');
-                const btnLoading = submitBtn.querySelector('.btn-loading');
-                
-                // Show loading state
-                btnText.style.display = 'none';
-                btnLoading.style.display = 'inline-block';
-                submitBtn.disabled = true;
-                
-                try {
-                    // Replace with your EmailJS service details
-                    await emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form);
-                    
-                    // Success message
-                    alert('Message sent successfully! We\'ll get back to you soon.');
-                    form.reset();
-                } catch (error) {
-                    // Error message
-                    alert('Sorry, there was an error sending your message. Please try again.');
-                    console.error('EmailJS error:', error);
-                } finally {
-                    // Reset button state
-                    btnText.style.display = 'inline-block';
-                    btnLoading.style.display = 'none';
-                    submitBtn.disabled = false;
-                }
+                const target = document.querySelector(anchor.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ═══ Waitlist ═══
+        document.getElementById('waitlistForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('waitlistEmail').value;
+            // In production, send to your backend / EmailJS / Mailchimp
+            document.getElementById('waitlistForm').style.display = 'none';
+            document.getElementById('waitlistSuccess').style.display = 'block';
+            console.log('Waitlist signup:', email);
+        });
+
+        // ═══ RGBY Demo Engine ═══
+        const presets = {
+            risk: "URGENT: Critical vulnerability discovered in production authentication system. Immediate patching required. Three customer accounts show signs of unauthorised access attempts in the last 24 hours. Escalating to CISO and initiating incident response protocol.",
+            compliance: "Annual compliance review completed for Q4 2025. All regulatory requirements met across GDPR, SOC 2, and ISO 27001 frameworks. Two minor findings noted in access control documentation — remediation plan submitted and approved. Next audit scheduled for March 2026.",
+            board: "Board briefing: Q3 revenue exceeded forecast by 12%. However, I'm concerned about the trajectory of our enterprise pipeline. The team seems stretched and morale in engineering has dipped since the reorg. I'd recommend we pause the expansion hiring and consolidate before pushing into the US market.",
+            drift: "Weekly performance metrics show a 15% decline in model accuracy over the past 30 days. Input distribution has shifted significantly from the training baseline — particularly in the financial services segment. Retraining recommended. No degradation detected in healthcare or public sector pipelines."
+        };
+
+        function loadPreset(key) {
+            document.getElementById('demoInput').value = presets[key];
         }
 
-        // Smooth scrolling for navigation links
-        function setupSmoothScrolling() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        }
+        function runDemo() {
+            const text = document.getElementById('demoInput').value.trim();
+            if (!text) return;
 
-        // Loading screen
-        function hideLoadingScreen() {
-            const loadingOverlay = document.getElementById('loadingOverlay');
+            const btn = document.getElementById('demoBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner" style="display:inline-block;width:14px;height:14px;border:2px solid transparent;border-top-color:var(--bg);border-radius:50%;animation:spin 0.6s linear infinite;"></span> Analysing...';
+
             setTimeout(() => {
-                loadingOverlay.classList.add('hidden');
-            }, 1000);
+                const scores = analyseText(text);
+                displayResults(scores, text);
+                btn.disabled = false;
+                btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg> Analyse with RGBY';
+            }, 1200);
         }
 
-        // Initialize everything when page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            createParticles();
-            setupMobileMenu();
-            setupContactForm();
-            setupSmoothScrolling();
-            hideLoadingScreen();
-            
-            // Add scroll listener
-            window.addEventListener('scroll', handleNavScroll);
+        function analyseText(text) {
+            const lower = text.toLowerCase();
+            const words = lower.split(/\s+/).length;
+
+            // Red — Risk & Urgency
+            const riskWords = ['urgent','critical','risk','threat','vulnerability','breach','attack','emergency','escalat','incident','danger','fail','alert','immediate','warning','unauthorised','unauthorized'];
+            let r = 0;
+            riskWords.forEach(w => { if (lower.includes(w)) r += 15; });
+            if (lower.includes('!')) r += 5;
+            r = Math.min(Math.max(r, 8), 95);
+
+            // Green — Governance
+            const govWords = ['compliance','regulatory','audit','policy','framework','gdpr','sox','iso','requirement','standard','review','approved','documentation','procedure','regulation','certified','governance','oversight'];
+            let g = 0;
+            govWords.forEach(w => { if (lower.includes(w)) g += 12; });
+            g = Math.min(Math.max(g, 8), 95);
+
+            // Blue — Behavioural
+            const behWords = ['concerned','feel','think','believe','worried','morale','team','culture','recommend','suggest','opinion','seem','confident','frustrated','optimistic','hesitant','perception','sentiment','dipped','stretched'];
+            let b = 0;
+            behWords.forEach(w => { if (lower.includes(w)) b += 14; });
+            b = Math.min(Math.max(b, 8), 95);
+
+            // Yellow — Yield / Output
+            const yieldWords = ['performance','accuracy','metric','result','output','forecast','revenue','decline','growth','improvement','baseline','target','exceeded','data','model','pipeline','degradation','retraining'];
+            let y = 0;
+            yieldWords.forEach(w => { if (lower.includes(w)) y += 13; });
+            y = Math.min(Math.max(y, 8), 95);
+
+            return { r, g, b, y };
+        }
+
+        function getSignalLabel(score) {
+            if (score >= 75) return 'High signal detected';
+            if (score >= 45) return 'Moderate signal';
+            if (score >= 20) return 'Low signal';
+            return 'Minimal signal';
+        }
+
+        function getDominant(scores) {
+            const map = { r: 'Risk & Urgency', g: 'Governance', b: 'Behavioural', y: 'Yield & Output' };
+            const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+            return { primary: map[sorted[0][0]], secondary: map[sorted[1][0]], primaryKey: sorted[0][0], score: sorted[0][1] };
+        }
+
+        function displayResults(scores, text) {
+            document.getElementById('demoPlaceholder').style.display = 'none';
+            document.getElementById('demoResults').classList.add('active');
+
+            const channels = ['R', 'G', 'B', 'Y'];
+            const keys = ['r', 'g', 'b', 'y'];
+
+            keys.forEach((k, i) => {
+                const score = scores[k];
+                document.getElementById('dcBar' + channels[i]).style.width = score + '%';
+                document.getElementById('dcScore' + channels[i]).textContent = score + '%';
+                document.getElementById('dcSignal' + channels[i]).textContent = getSignalLabel(score);
+            });
+
+            const dom = getDominant(scores);
+            const wordCount = text.split(/\s+/).length;
+            document.getElementById('demoSummary').textContent =
+                `${wordCount}-word input classified. Primary signal: ${dom.primary} (${scores[dom.primaryKey]}%). Secondary: ${dom.secondary}. This text would be routed through the ${dom.primary.toLowerCase()} processing pipeline with full audit trail.`;
+        }
+
+        // ═══ Contact Form ═══
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const btnText = btn.querySelector('.btn-text');
+            const spinner = btn.querySelector('.spinner');
+
+            btnText.textContent = 'Sending...';
+            spinner.style.display = 'block';
+            btn.disabled = true;
+
+            try {
+                await emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target);
+                btnText.textContent = 'Sent!';
+                e.target.reset();
+                setTimeout(() => {
+                    btnText.textContent = 'Send message';
+                    spinner.style.display = 'none';
+                    btn.disabled = false;
+                }, 2000);
+            } catch (error) {
+                btnText.textContent = 'Failed — try again';
+                spinner.style.display = 'none';
+                btn.disabled = false;
+                console.error('EmailJS error:', error);
+                setTimeout(() => { btnText.textContent = 'Send message'; }, 3000);
+            }
+        });
+
+        // ═══ Whitepaper Form ═══
+        document.getElementById('wpForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('wpName').value;
+            const email = document.getElementById('wpEmail').value;
+            const role = document.getElementById('wpRole').value;
+            // In production, send to backend / EmailJS and trigger PDF delivery
+            document.getElementById('wpFormContainer').style.display = 'none';
+            document.getElementById('wpSuccess').style.display = 'block';
+            console.log('Whitepaper download:', { name, email, role });
         });
     </script>
 </body>
