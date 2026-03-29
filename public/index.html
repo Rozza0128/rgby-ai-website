@@ -426,8 +426,6 @@
            ============================================================ */
         .hero-text-block {
             text-align: center;
-            opacity: 0;
-            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
         }
 
         .hero-title {
@@ -439,6 +437,43 @@
             margin-bottom: 1rem;
         }
 
+        .hero-title {
+            perspective: 800px;
+        }
+
+        .hero-title .fly-letter {
+            display: inline-block;
+            opacity: 0;
+            transform: translateZ(600px) scale(3);
+            filter: blur(20px);
+            animation: warpIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            text-shadow: 0 0 40px currentColor;
+        }
+
+        @keyframes warpIn {
+            0% {
+                opacity: 0;
+                transform: translateZ(600px) scale(3);
+                filter: blur(20px);
+                text-shadow: 0 0 60px currentColor;
+            }
+            40% {
+                opacity: 1;
+                text-shadow: 0 0 30px currentColor;
+            }
+            70% {
+                transform: translateZ(0px) scale(1.05);
+                filter: blur(0);
+                text-shadow: 0 0 15px currentColor;
+            }
+            100% {
+                opacity: 1;
+                transform: translateZ(0) scale(1);
+                filter: blur(0);
+                text-shadow: 0 0 0px transparent;
+            }
+        }
+
         .hero-tagline {
             font-family: var(--font-heading);
             font-weight: 400;
@@ -447,6 +482,8 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             margin-bottom: 0.75rem;
+            opacity: 0;
+            animation: fadeUp 1s ease 2.2s forwards;
         }
 
         /* Typed text cursor */
@@ -470,6 +507,8 @@
             font-weight: 300;
             font-size: 0.9rem;
             color: var(--text-3);
+            opacity: 0;
+            animation: fadeUp 1s ease 2.5s forwards;
         }
 
         /* Hero video button */
@@ -489,6 +528,8 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
+            opacity: 0;
+            animation: fadeUp 1s ease 2.8s forwards;
         }
 
         .hero-video-btn:hover {
@@ -1767,6 +1808,11 @@
 
             .hero-title {
                 font-size: 2.5rem;
+                perspective: 400px;
+            }
+
+            .hero-title .fly-letter {
+                transform: translateZ(300px) scale(2);
             }
 
             .sectors-grid {
@@ -1775,6 +1821,38 @@
 
             .sector-card {
                 padding: 1.5rem;
+            }
+
+            .stat-bar-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+
+            .stats-row {
+                flex-wrap: wrap;
+            }
+
+            .motif-track span {
+                font-size: 0.75rem;
+                padding: 0 1rem;
+            }
+
+            .body-lg, .headline-lg {
+                font-size: 1.2rem !important;
+            }
+
+            .scene-text, .scene-text-bottom {
+                padding: 0 1rem;
+            }
+
+            .trust-partners {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .polygon-container svg {
+                width: 250px !important;
+                height: 250px !important;
             }
         }
 
@@ -2391,7 +2469,7 @@
             <div class="hero-dot yellow"></div>
         </div>
         <div class="hero-text-block">
-            <h1 class="hero-title"><span style="color:var(--r)">R</span><span style="color:var(--g)">G</span><span style="color:var(--b)">B</span><span style="color:var(--y)">Y</span><span style="color:var(--text)">.ai</span></h1>
+            <h1 class="hero-title"><span class="fly-letter" style="color:var(--r); animation-delay:0.6s">R</span><span class="fly-letter" style="color:var(--g); animation-delay:0.8s">G</span><span class="fly-letter" style="color:var(--b); animation-delay:1.0s">B</span><span class="fly-letter" style="color:var(--y); animation-delay:1.2s">Y</span><span class="fly-letter" style="color:var(--text); animation-delay:1.5s">.ai</span></h1>
             <p class="hero-tagline" id="heroTagline"></p>
             <p class="hero-location">Birmingham, UK</p>
             <button class="hero-video-btn" id="heroVideoBtn">
