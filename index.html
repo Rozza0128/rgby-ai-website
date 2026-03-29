@@ -16,7 +16,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
@@ -3001,11 +3000,6 @@
         });
 
         // ============================================================
-        // Initialize EmailJS (placeholder key)
-        // ============================================================
-        if (window.emailjs) {
-            emailjs.init('YOUR_PUBLIC_KEY');
-        }
 
         // ============================================================
         // NAV: Show after scrolling past hero
@@ -3378,24 +3372,21 @@
                 var email = document.getElementById('waitlistEmail').value;
                 var msg = document.getElementById('waitlistMsg');
 
-                // EmailJS integration (placeholder)
-                if (window.emailjs && typeof emailjs.send === 'function') {
-                    emailjs.send('service_rgby', 'template_waitlist', {
-                        email: email,
-                    }).then(function() {
-                        msg.textContent = 'You\'re on the list. We\'ll be in touch.';
-                        msg.style.color = 'var(--cyan)';
-                        waitlistForm.reset();
-                    }, function() {
-                        msg.textContent = 'Something went wrong. Try again.';
-                        msg.style.color = 'var(--r)';
-                    });
-                } else {
-                    // Fallback if EmailJS not configured
-                    msg.textContent = 'You\'re on the list. We\'ll be in touch.';
+                fetch('/api/waitlist', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                })
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    msg.textContent = data.message || 'You\'re on the list.';
                     msg.style.color = '#00D4AA';
                     waitlistForm.reset();
-                }
+                })
+                .catch(function() {
+                    msg.textContent = 'Something went wrong. Try again.';
+                    msg.style.color = 'var(--r)';
+                });
             });
         }
 
@@ -3408,25 +3399,21 @@
                 var message = document.getElementById('contactMessage').value;
                 var msg = document.getElementById('contactMsg');
 
-                if (window.emailjs && typeof emailjs.send === 'function') {
-                    emailjs.send('service_rgby', 'template_contact', {
-                        from_name: name,
-                        from_email: email,
-                        subject: subject,
-                        message: message,
-                    }).then(function() {
-                        msg.textContent = 'Message sent. We\'ll get back to you.';
-                        msg.style.color = 'var(--cyan)';
-                        contactForm.reset();
-                    }, function() {
-                        msg.textContent = 'Something went wrong. Try again.';
-                        msg.style.color = 'var(--r)';
-                    });
-                } else {
-                    msg.textContent = 'Message sent. We\'ll get back to you.';
+                fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: name, email: email, subject: subject, message: message })
+                })
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    msg.textContent = 'Message received. We\'ll get back to you.';
                     msg.style.color = '#00D4AA';
                     contactForm.reset();
-                }
+                })
+                .catch(function() {
+                    msg.textContent = 'Something went wrong. Try again.';
+                    msg.style.color = 'var(--r)';
+                });
             });
         }
 
