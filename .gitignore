@@ -122,3 +122,5 @@ netlify-deploy/
 netlify-final-deploy/
 rgbyai-*/
 static_website/node_modules/
+node_modules/
+video-frames/
