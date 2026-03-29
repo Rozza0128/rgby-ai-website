@@ -121,4 +121,4 @@ RGBY-FIXED-UPLOAD/
 netlify-deploy/
 netlify-final-deploy/
 rgbyai-*/
-static_website/
+static_website/node_modules/
