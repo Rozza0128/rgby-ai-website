@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform — RGBY.ai</title>
+    <meta name="description" content="A deterministic reasoning and monitoring layer for complex operations. Signal detection, drift monitoring, and auditable outputs for regulated environments.">
+    <meta property="og:title" content="Platform — RGBY.ai">
+    <meta property="og:description" content="Signal detection, drift monitoring, deterministic scoring, and evidence-ready outputs.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='10' cy='10' r='6' fill='%23E8443A'/><circle cx='22' cy='10' r='6' fill='%2334C759'/><circle cx='22' cy='22' r='6' fill='%233B82F6'/><circle cx='10' cy='22' r='6' fill='%23FACC15'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <div class="loader" id="loader"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div></div>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="ambient-flare af-red" style="top:10%;left:-5%;"></div>
+    <div class="ambient-flare af-green" style="top:30%;right:-5%;"></div>
+    <div class="ambient-flare af-blue" style="bottom:20%;left:10%;"></div>
+    <div class="ambient-flare af-yellow" style="bottom:10%;right:10%;"></div>
+    <canvas id="particleField"></canvas>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+
+    <nav class="nav nav-visible" id="mainNav">
+        <a href="/" class="nav-logo">
+            <span class="nav-dots"><span class="nav-dot" style="background:var(--r)"></span><span class="nav-dot" style="background:var(--g)"></span><span class="nav-dot" style="background:var(--b)"></span><span class="nav-dot" style="background:var(--y)"></span></span>
+            <span style="color:var(--r)">R</span><span style="color:var(--g)">G</span><span style="color:var(--b)">B</span><span style="color:var(--y)">Y</span><span>.ai</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/platform">Platform</a></li>
+            <li><a href="/sectors">Sectors</a></li>
+            <li><a href="/r-kid">R-KID</a></li>
+            <li><a href="/dewpoint">DewPoint</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact" class="nav-cta">Request Briefing</a></li>
+        </ul>
+        <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu"><i data-lucide="menu" style="width:24px;height:24px"></i></button>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="eyebrow">Platform</span>
+            <h1>A deterministic reasoning and monitoring layer for complex operations</h1>
+            <p class="subtitle">RGBY combines signal detection, structured reasoning, drift monitoring, and auditable outputs to help organisations maintain control in regulated and high-consequence environments.</p>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="info-section">
+                <h2>What the platform does</h2>
+                <p>RGBY is designed for environments where compliance, safety, and operational integrity are non-negotiable. It provides a structured layer for interpreting signals, monitoring change, detecting drift, and producing outputs that are traceable and auditable.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="container">
+            <h2>Core capabilities</h2>
+            <div class="capability-grid">
+                <div class="capability-card">
+                    <h3>Signal Detection</h3>
+                    <p>Continuous monitoring of environmental, behavioural, and procedural signals across operational domains.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Drift Monitoring</h3>
+                    <p>Tracks how conditions evolve over time, identifying deviations from expected operational trajectories.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Deterministic Scoring</h3>
+                    <p>Outputs are produced through deterministic logic, not probabilistic inference. Every result is reproducible.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Decision Traceability</h3>
+                    <p>Complete audit trails from signal to score to action. Every output can be traced to its inputs.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Evidence-Ready Outputs</h3>
+                    <p>Produces outputs structured for regulatory review, legal proceedings, and compliance reporting.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Edge / On-Prem / Sovereign Deployment</h3>
+                    <p>Deployable at the edge, on-premises, or in sovereign environments. No mandatory cloud dependency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="info-section">
+                <h2>How it works</h2>
+                <p>The platform maps operational events into a four-part state space — risk, pattern, procedure, and behaviour. By tracking how these dimensions change over time, RGBY detects drift before it becomes failure. The CNVF Vector Engine applies deterministic logic to assess whether the system's trajectory remains operationally plausible.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="info-section">
+                <h2>Why deterministic logic matters</h2>
+                <p>Probabilistic systems produce different outputs for the same inputs. In regulated environments, this creates audit risk and erodes trust. RGBY's deterministic approach means that the same inputs always produce the same outputs — making every decision explainable, reviewable, and defensible.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section cta-section">
+        <div class="container">
+            <h2>Talk to us about the platform</h2>
+            <p>For technical reviews, deployment discussions, and sector-specific conversations.</p>
+            <a href="/contact" class="btn-primary">Request a briefing</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="nav-dots"><span class="nav-dot" style="background:var(--r)"></span><span class="nav-dot" style="background:var(--g)"></span><span class="nav-dot" style="background:var(--b)"></span><span class="nav-dot" style="background:var(--y)"></span></span>
+                    <span style="color:var(--r)">R</span><span style="color:var(--g)">G</span><span style="color:var(--b)">B</span><span style="color:var(--y)">Y</span><span>.ai</span>
+                </div>
+                <p class="footer-patent">Patent protected: A16626GB, A16512GB</p>
+                <p class="footer-built">Built in Birmingham</p>
+            </div>
+            <div class="footer-links">
+                <a href="/">Home</a><a href="/platform">Platform</a><a href="/sectors">Sectors</a><a href="/r-kid">R-KID Protocol</a><a href="/dewpoint">DewPoint Guardian</a><a href="/about">About</a><a href="/contact">Contact</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 RGBY.ai. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/shared.js"></script>
+</body>
+</html>

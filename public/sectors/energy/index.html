@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy — RGBY.ai</title>
+    <meta name="description" content="Grid monitoring, supply-chain visibility, and control assurance for energy.">
+    <meta property="og:title" content="Energy — RGBY.ai">
+    <meta property="og:description" content="Grid monitoring, supply-chain visibility, and control assurance for energy.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='10' cy='10' r='6' fill='%23E8443A'/><circle cx='22' cy='10' r='6' fill='%2334C759'/><circle cx='22' cy='22' r='6' fill='%233B82F6'/><circle cx='10' cy='22' r='6' fill='%23FACC15'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <div class="loader" id="loader"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div></div>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="ambient-flare af-red" style="top:10%;left:-5%;"></div>
+    <div class="ambient-flare af-green" style="top:30%;right:-5%;"></div>
+    <div class="ambient-flare af-blue" style="bottom:20%;left:10%;"></div>
+    <div class="ambient-flare af-yellow" style="bottom:10%;right:10%;"></div>
+    <canvas id="particleField"></canvas>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+
+    <nav class="nav nav-visible" id="mainNav">
+        <a href="/" class="nav-logo">
+            <span class="nav-dots"><span class="nav-dot" style="background:var(--r)"></span><span class="nav-dot" style="background:var(--g)"></span><span class="nav-dot" style="background:var(--b)"></span><span class="nav-dot" style="background:var(--y)"></span></span>
+            <span style="color:var(--r)">R</span><span style="color:var(--g)">G</span><span style="color:var(--b)">B</span><span style="color:var(--y)">Y</span><span>.ai</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/platform">Platform</a></li>
+            <li><a href="/sectors">Sectors</a></li>
+            <li><a href="/r-kid">R-KID</a></li>
+            <li><a href="/dewpoint">DewPoint</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact" class="nav-cta">Request Briefing</a></li>
+        </ul>
+        <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu"><i data-lucide="menu" style="width:24px;height:24px"></i></button>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="eyebrow reveal">Sector</span>
+            <h1 class="reveal">Grid monitoring, supply-chain visibility, and control assurance for energy</h1>
+            <p class="subtitle reveal">Structured monitoring for infrastructure integrity, regulatory compliance, and operational control in constrained energy environments.</p>
+        </div>
+    </section>
+
+    <section class="page-section sector-detail-section">
+        <div class="container">
+            <div class="info-section reveal">
+                <h2>The challenge</h2>
+                <p>Energy infrastructure operates under tight regulatory constraints with significant consequences for failure. Grid stability, supply chain integrity, and environmental compliance require continuous monitoring that produces auditable, defensible outputs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section sector-detail-section">
+        <div class="container">
+            <div class="info-section reveal">
+                <h2>Where RGBY fits</h2>
+                <p>RGBY provides structured monitoring of infrastructure signals, supply chain indicators, and regulatory compliance across energy operations.</p>
+                <ul>
+                    <li>Grid and infrastructure monitoring</li>
+                    <li>Supply chain integrity assessment</li>
+                    <li>Environmental compliance tracking</li>
+                    <li>Operational control assurance</li>
+                    <li>Regulatory reporting support</li>
+                    <li>Asset condition monitoring</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section sector-detail-section">
+        <div class="container">
+            <div class="info-section reveal">
+                <h2>Typical outputs</h2>
+                <ul>
+                    <li>Infrastructure condition assessments</li>
+                    <li>Supply chain risk reports</li>
+                    <li>Compliance evidence packages</li>
+                    <li>Operational control dashboards</li>
+                    <li>Regulatory audit trails</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section sector-detail-section">
+        <div class="container">
+            <div class="info-section reveal">
+                <h2>Why deterministic logic matters here</h2>
+                <p>Energy regulation requires that monitoring outputs are reproducible and auditable. Deterministic logic ensures that every assessment can be traced, reviewed, and defended.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section cta-section">
+        <div class="container">
+            <h2 class="reveal">Talk to us about energy</h2>
+            <p class="reveal">For technical reviews, deployment discussions, and sector-specific conversations.</p>
+            <div class="reveal">
+                <a href="/contact" class="btn-primary">Request a briefing</a>
+                <a href="/sectors" class="btn-secondary" style="margin-left:1rem;">Back to sectors</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="nav-dots"><span class="nav-dot" style="background:var(--r)"></span><span class="nav-dot" style="background:var(--g)"></span><span class="nav-dot" style="background:var(--b)"></span><span class="nav-dot" style="background:var(--y)"></span></span>
+                    <span style="color:var(--r)">R</span><span style="color:var(--g)">G</span><span style="color:var(--b)">B</span><span style="color:var(--y)">Y</span><span>.ai</span>
+                </div>
+                <p class="footer-patent">Patent protected: A16626GB, A16512GB</p>
+                <p class="footer-built">Built in Birmingham</p>
+            </div>
+            <div class="footer-links">
+                <a href="/">Home</a><a href="/platform">Platform</a><a href="/sectors">Sectors</a><a href="/r-kid">R-KID Protocol</a><a href="/dewpoint">DewPoint Guardian</a><a href="/about">About</a><a href="/contact">Contact</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 RGBY.ai. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/shared.js"></script>
+</body>
+</html>

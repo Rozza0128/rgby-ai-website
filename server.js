@@ -127,8 +127,17 @@ app.get('/api/submissions', (req, res) => {
   res.json({ waitlist_count: waitlist.length, contact_count: contacts.length, waitlist, contacts });
 });
 
+// Clean URL routing — serve index.html from matching directory
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  const cleanPath = req.path.replace(/\/+$/, '') || '/';
+  const filePath = path.join(__dirname, 'public', cleanPath, 'index.html');
+
+  if (fs.existsSync(filePath)) {
+    res.sendFile(filePath);
+  } else {
+    // 404 — serve homepage as fallback
+    res.status(404).sendFile(path.join(__dirname, 'public', 'index.html'));
+  }
 });
 
 app.listen(PORT, '0.0.0.0', () => {

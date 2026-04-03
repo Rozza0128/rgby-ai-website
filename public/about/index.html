@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — RGBY.ai</title>
+    <meta name="description" content="Built in Birmingham for sectors where control, safety, and evidence matter. Patent-protected deterministic intelligence.">
+    <meta property="og:title" content="About — RGBY.ai">
+    <meta property="og:description" content="Built in Birmingham for sectors where control, safety, and evidence matter. Patent-protected deterministic intelligence.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='10' cy='10' r='6' fill='%23E8443A'/><circle cx='22' cy='10' r='6' fill='%2334C759'/><circle cx='22' cy='22' r='6' fill='%233B82F6'/><circle cx='10' cy='22' r='6' fill='%23FACC15'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <div class="loader" id="loader"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div></div>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="ambient-flare af-red" style="top:10%;left:-5%;"></div>
+    <div class="ambient-flare af-green" style="top:30%;right:-5%;"></div>
+    <div class="ambient-flare af-blue" style="bottom:20%;left:10%;"></div>
+    <div class="ambient-flare af-yellow" style="bottom:10%;right:10%;"></div>
+    <canvas id="particleField"></canvas>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+
+    <nav class="nav nav-visible" id="mainNav">
+        <a href="/" class="nav-logo">
+            <span class="nav-dots"><span class="nav-dot" style="background:var(--r)"></span><span class="nav-dot" style="background:var(--g)"></span><span class="nav-dot" style="background:var(--b)"></span><span class="nav-dot" style="background:var(--y)"></span></span>
+            <span style="color:var(--r)">R</span><span style="color:var(--g)">G</span><span style="color:var(--b)">B</span><span style="color:var(--y)">Y</span><span>.ai</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/platform">Platform</a></li>
+            <li><a href="/sectors">Sectors</a></li>
+            <li><a href="/r-kid">R-KID</a></li>
+            <li><a href="/dewpoint">DewPoint</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact" class="nav-cta">Request Briefing</a></li>
+        </ul>
+        <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu"><i data-lucide="menu" style="width:24px;height:24px"></i></button>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="eyebrow reveal">About</span>
+            <h1 class="reveal">Built in Birmingham for sectors where control, safety, and evidence matter.</h1>
+        </div>
+    </section>
+
+    <section class="sector-detail-section">
+        <div class="container" style="max-width:800px;">
+            <h2 class="reveal">Why RGBY exists</h2>
+            <p class="reveal">RGBY was developed from direct experience of compliance failure in regulated sectors. Not from academic theory, but from live operational environments where existing tools failed to detect deterioration, evidence response, or maintain control.</p>
+            <p class="reveal">The platform began in social housing, where damp and mould compliance exposed fundamental weaknesses in how organisations monitor conditions, identify causation, and evidence their response. The Glaser method — the standard approach to condensation risk — was found to be insufficient for real-world conditions.</p>
+            <p class="reveal">From that starting point, RGBY developed a deterministic reasoning approach that applies across any sector where compliance, safety, and auditability are non-negotiable.</p>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="info-section">
+                <h2 class="reveal">The team</h2>
+                <div class="founders-grid">
+                    <div class="founder-card reveal">
+                        <h3>Gerald Manton</h3>
+                        <p style="color:var(--cyan);font-family:var(--font-mono);font-size:0.85rem;margin-bottom:1rem;">Strategic Development</p>
+                        <p>Strategic development, product direction, and commercial positioning. Responsible for the Narrowhouse development — a 29-storey residential tower in Gas Street Basin, Birmingham, now being converted to the Birmingham Institute of AI.</p>
+                    </div>
+                    <div class="founder-card reveal">
+                        <h3>John O'Leary</h3>
+                        <p style="color:var(--cyan);font-family:var(--font-mono);font-size:0.85rem;margin-bottom:1rem;">Operations &amp; Product</p>
+                        <p>20 years across social housing and major construction delivery. Head of operations delivering large construction frameworks. Identified the Glaser method failure, developed the RGBY approach, and hardened it for cross-sector deployment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sector-detail-section">
+        <div class="container" style="max-width:800px;">
+            <h2 class="reveal">Patent protected</h2>
+            <p class="reveal">RGBY's core technology is patent-protected under references A16626GB and A16512GB. The patents cover the deterministic reasoning approach, the CNVF vector engine architecture, and the structured compliance monitoring methodology.</p>
+        </div>
+    </section>
+
+    <section class="sector-detail-section">
+        <div class="container" style="max-width:800px;">
+            <h2 class="reveal">What we believe</h2>
+            <ul class="reveal">
+                <li>Compliance should be evidenced, not assumed.</li>
+                <li>Monitoring should be continuous, not reactive.</li>
+                <li>Outputs should be deterministic, not probabilistic.</li>
+                <li>Evidence should be structured, not narrative.</li>
+                <li>Control should be maintained, not hoped for.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="info-section" style="text-align:center;">
+                <h2 class="reveal">Talk to us</h2>
+                <p class="reveal">For partnerships, pilots, technical discussions, and sector conversations.</p>
+                <a href="/contact" class="btn-primary reveal">Request a briefing</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="nav-dots"><span class="nav-dot" style="background:var(--r)"></span><span class="nav-dot" style="background:var(--g)"></span><span class="nav-dot" style="background:var(--b)"></span><span class="nav-dot" style="background:var(--y)"></span></span>
+                    <span style="color:var(--r)">R</span><span style="color:var(--g)">G</span><span style="color:var(--b)">B</span><span style="color:var(--y)">Y</span><span>.ai</span>
+                </div>
+                <p class="footer-patent">Patent protected: A16626GB, A16512GB</p>
+                <p class="footer-built">Built in Birmingham</p>
+            </div>
+            <div class="footer-links">
+                <a href="/">Home</a><a href="/platform">Platform</a><a href="/sectors">Sectors</a><a href="/r-kid">R-KID Protocol</a><a href="/dewpoint">DewPoint Guardian</a><a href="/about">About</a><a href="/contact">Contact</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 RGBY.ai. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/shared.js"></script>
+</body>
+</html>

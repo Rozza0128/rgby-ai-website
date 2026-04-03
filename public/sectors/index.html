@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sectors — RGBY.ai</title>
+    <meta name="description" content="RGBY supports risk visibility, control assurance, and auditable decision-making across regulated sectors.">
+    <meta property="og:title" content="Sectors — RGBY.ai">
+    <meta property="og:description" content="RGBY supports risk visibility, control assurance, and auditable decision-making across regulated sectors.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='10' cy='10' r='6' fill='%23E8443A'/><circle cx='22' cy='10' r='6' fill='%2334C759'/><circle cx='22' cy='22' r='6' fill='%233B82F6'/><circle cx='10' cy='22' r='6' fill='%23FACC15'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <div class="loader" id="loader"><div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div></div>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="ambient-flare af-red" style="top:10%;left:-5%;"></div>
+    <div class="ambient-flare af-green" style="top:30%;right:-5%;"></div>
+    <div class="ambient-flare af-blue" style="bottom:20%;left:10%;"></div>
+    <div class="ambient-flare af-yellow" style="bottom:10%;right:10%;"></div>
+    <canvas id="particleField"></canvas>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+
+    <nav class="nav nav-visible" id="mainNav">
+        <a href="/" class="nav-logo">
+            <span class="nav-dots"><span class="nav-dot" style="background:var(--r)"></span><span class="nav-dot" style="background:var(--g)"></span><span class="nav-dot" style="background:var(--b)"></span><span class="nav-dot" style="background:var(--y)"></span></span>
+            <span style="color:var(--r)">R</span><span style="color:var(--g)">G</span><span style="color:var(--b)">B</span><span style="color:var(--y)">Y</span><span>.ai</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/platform">Platform</a></li>
+            <li><a href="/sectors">Sectors</a></li>
+            <li><a href="/r-kid">R-KID</a></li>
+            <li><a href="/dewpoint">DewPoint</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact" class="nav-cta">Request Briefing</a></li>
+        </ul>
+        <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu"><i data-lucide="menu" style="width:24px;height:24px"></i></button>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="eyebrow reveal">Sectors</span>
+            <h1 class="reveal">One engine. Multiple regulated sectors.</h1>
+            <p class="subtitle reveal">RGBY supports risk visibility, control assurance, and auditable decision-making across sectors where compliance, safety, and operational integrity matter.</p>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="info-section">
+                <div class="sectors-grid">
+                    <a href="/sectors/social-housing" class="sector-card-link">
+                        <div class="sector-card reveal">
+                            <i data-lucide="home"></i>
+                            <h3>Social Housing</h3>
+                            <p>Damp and mould monitoring, resident safety assurance, and evidence-led compliance support.</p>
+                        </div>
+                    </a>
+                    <a href="/sectors/maritime" class="sector-card-link">
+                        <div class="sector-card reveal">
+                            <i data-lucide="anchor"></i>
+                            <h3>Maritime</h3>
+                            <p>Vessel behaviour monitoring, sanctions exposure, cargo anomaly detection, and route integrity analysis.</p>
+                        </div>
+                    </a>
+                    <a href="/sectors/financial-services" class="sector-card-link">
+                        <div class="sector-card reveal">
+                            <i data-lucide="trending-up"></i>
+                            <h3>Financial Services</h3>
+                            <p>Portfolio oversight, control monitoring, decision traceability, and MiFID II / FCA audit support.</p>
+                        </div>
+                    </a>
+                    <a href="/sectors/defence" class="sector-card-link">
+                        <div class="sector-card reveal">
+                            <i data-lucide="shield"></i>
+                            <h3>Defence</h3>
+                            <p>Structured reasoning, procurement integrity, assurance workflows, and decision support in sensitive environments.</p>
+                        </div>
+                    </a>
+                    <a href="/sectors/construction" class="sector-card-link">
+                        <div class="sector-card reveal">
+                            <i data-lucide="building-2"></i>
+                            <h3>Construction</h3>
+                            <p>BSA gateway support, HRB compliance evidence, and regulatory control monitoring.</p>
+                        </div>
+                    </a>
+                    <a href="/sectors/energy" class="sector-card-link">
+                        <div class="sector-card reveal">
+                            <i data-lucide="zap"></i>
+                            <h3>Energy</h3>
+                            <p>Grid and infrastructure monitoring, supply-chain visibility, and control assurance in constrained environments.</p>
+                        </div>
+                    </a>
+                    <a href="/sectors/ai-governance" class="sector-card-link">
+                        <div class="sector-card reveal">
+                            <i data-lucide="brain"></i>
+                            <h3>AI Governance</h3>
+                            <p>Structured controls, drift detection, and audit-ready outputs for AI-enabled workflows.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section cta-section">
+        <div class="container">
+            <h2 class="reveal">Discuss your sector</h2>
+            <p class="reveal">For sector-specific conversations, technical reviews, and deployment discussions.</p>
+            <a href="/contact" class="btn-primary reveal">Discuss your sector</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="nav-dots"><span class="nav-dot" style="background:var(--r)"></span><span class="nav-dot" style="background:var(--g)"></span><span class="nav-dot" style="background:var(--b)"></span><span class="nav-dot" style="background:var(--y)"></span></span>
+                    <span style="color:var(--r)">R</span><span style="color:var(--g)">G</span><span style="color:var(--b)">B</span><span style="color:var(--y)">Y</span><span>.ai</span>
+                </div>
+                <p class="footer-patent">Patent protected: A16626GB, A16512GB</p>
+                <p class="footer-built">Built in Birmingham</p>
+            </div>
+            <div class="footer-links">
+                <a href="/">Home</a><a href="/platform">Platform</a><a href="/sectors">Sectors</a><a href="/r-kid">R-KID Protocol</a><a href="/dewpoint">DewPoint Guardian</a><a href="/about">About</a><a href="/contact">Contact</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 RGBY.ai. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/shared.js"></script>
+</body>
+</html>
