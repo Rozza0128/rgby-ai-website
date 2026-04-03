@@ -1152,25 +1152,38 @@
             position: relative;
             width: 100%;
             background: #08080c;
-            padding: 3rem 2rem;
+            padding: 2.5rem 0;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
             z-index: 2;
+            overflow: hidden;
         }
 
-        .stat-bar-inner {
-            max-width: 1000px;
-            margin: 0 auto;
+        .stat-marquee-track {
             display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
+            width: max-content;
+            animation: statMarquee 40s linear infinite;
+        }
+
+        .stat-marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        .stat-marquee-content {
+            display: flex;
+            gap: 4rem;
+            padding: 0 2rem;
+        }
+
+        @keyframes statMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         .stat-bar-item {
             text-align: center;
-            min-width: 120px;
+            min-width: 160px;
+            flex-shrink: 0;
         }
 
         .stat-bar-value {
@@ -2136,6 +2149,189 @@
         }
 
         /* ============================================================
+           SECTION: R-KID PROTOCOL
+           ============================================================ */
+        .rkid-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rkid-hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .rkid-logo {
+            display: inline-flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .rkid-logo-letter {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .rkid-logo-letter::after {
+            content: attr(data-label);
+            position: absolute;
+            bottom: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.55rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            opacity: 0.6;
+        }
+
+        .rkid-logo-letter.r { background: rgba(255, 59, 48, 0.15); color: var(--r); border: 1px solid rgba(255, 59, 48, 0.3); }
+        .rkid-logo-letter.k { background: rgba(0, 212, 170, 0.15); color: var(--cyan); border: 1px solid rgba(0, 212, 170, 0.3); }
+        .rkid-logo-letter.i { background: rgba(50, 130, 246, 0.15); color: var(--b); border: 1px solid rgba(50, 130, 246, 0.3); }
+        .rkid-logo-letter.d { background: rgba(255, 204, 0, 0.15); color: var(--y); border: 1px solid rgba(255, 204, 0, 0.3); }
+
+        .rkid-tagline {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 1.15rem;
+            color: var(--text-2);
+            max-width: 600px;
+            margin: 2.5rem auto 0;
+            line-height: 1.7;
+        }
+
+        .rkid-pillars {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .rkid-pillar {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rkid-pillar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .rkid-pillar:hover::before { opacity: 1; }
+        .rkid-pillar:nth-child(1)::before { background: var(--r); }
+        .rkid-pillar:nth-child(2)::before { background: var(--cyan); }
+        .rkid-pillar:nth-child(3)::before { background: var(--b); }
+        .rkid-pillar:nth-child(4)::before { background: var(--y); }
+
+        .rkid-pillar:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .rkid-pillar-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .rkid-pillar:nth-child(1) .rkid-pillar-icon { color: var(--r); }
+        .rkid-pillar:nth-child(2) .rkid-pillar-icon { color: var(--cyan); }
+        .rkid-pillar:nth-child(3) .rkid-pillar-icon { color: var(--b); }
+        .rkid-pillar:nth-child(4) .rkid-pillar-icon { color: var(--y); }
+
+        .rkid-pillar-title {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .rkid-pillar-sub {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+            opacity: 0.5;
+        }
+
+        .rkid-pillar-desc {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 0.9rem;
+            color: var(--text-3);
+            line-height: 1.6;
+        }
+
+        .rkid-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .rkid-flow-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-2);
+            text-align: center;
+        }
+
+        .rkid-flow-arrow {
+            color: var(--cyan);
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .rkid-pillars {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .rkid-logo-letter {
+                width: 50px;
+                height: 50px;
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .rkid-pillars {
+                grid-template-columns: 1fr;
+            }
+            .rkid-flow-box {
+                font-size: 0.75rem;
+                padding: 0.75rem 1rem;
+            }
+        }
+
+        /* ============================================================
            SECTOR CARD ICON HOVER COLORS
            ============================================================ */
         .sector-card:nth-child(1):hover .sector-icon { color: var(--r); }
@@ -2144,6 +2340,7 @@
         .sector-card:nth-child(4):hover .sector-icon { color: var(--y); }
         .sector-card:nth-child(5):hover .sector-icon { color: var(--cyan); }
         .sector-card:nth-child(6):hover .sector-icon { color: var(--r); }
+        .sector-card:nth-child(7):hover .sector-icon { color: var(--g); }
 
         /* ============================================================
            TIER CARD TOP BORDER COLORS
@@ -2447,8 +2644,8 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="#platform">Platform</a></li>
             <li><a href="#sectors">Sectors</a></li>
+            <li><a href="#rkid">R-KID</a></li>
             <li><a href="#dewpoint">DewPoint</a></li>
-            <li><a href="#research">Research</a></li>
             <li><a href="#contact" class="nav-cta">Join Waitlist</a></li>
         </ul>
         <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu">
@@ -2688,30 +2885,6 @@
     </div>
 
     <!-- ============================================================
-         AWAAB'S LAW STAT BAR
-         ============================================================ -->
-    <div class="stat-bar">
-        <div class="stat-bar-inner">
-            <div class="stat-bar-item reveal">
-                <p class="stat-bar-value" style="color:var(--r);">4.4M</p>
-                <p class="stat-bar-label">Social homes in scope</p>
-            </div>
-            <div class="stat-bar-item reveal reveal-delay-1">
-                <p class="stat-bar-value" style="color:var(--g);">9M+</p>
-                <p class="stat-bar-label">Total properties by 2027</p>
-            </div>
-            <div class="stat-bar-item reveal reveal-delay-2">
-                <p class="stat-bar-value" style="color:var(--b);">2.2%</p>
-                <p class="stat-bar-label">Glaser safety margin</p>
-            </div>
-            <div class="stat-bar-item reveal reveal-delay-3">
-                <p class="stat-bar-value" style="color:var(--y);">29</p>
-                <p class="stat-bar-label">HHSRS hazard categories</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================================
          SECTION 10: SECTORS
          ============================================================ -->
     <section class="info-section" id="sectors">
@@ -2752,6 +2925,142 @@
                     <h3 class="sector-card-title">Energy</h3>
                     <p class="sector-card-desc">Grid monitoring, supply chain integrity, regulatory compliance.</p>
                 </div>
+                <div class="sector-card reveal reveal-delay-3">
+                    <div class="sector-icon"><i data-lucide="brain"></i></div>
+                    <h3 class="sector-card-title">AI Governance</h3>
+                    <p class="sector-card-desc">R Kid Protocol. Deterministic AI safety. Algorithmic accountability and audit trails.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTOR STATS MARQUEE
+         ============================================================ -->
+    <div class="stat-bar">
+        <div class="stat-marquee-track">
+            <div class="stat-marquee-content">
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--r);">4.4M</p>
+                    <p class="stat-bar-label">Social homes in scope</p>
+                </div>
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--g);">9M+</p>
+                    <p class="stat-bar-label">Total properties by 2027</p>
+                </div>
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--b);">2.2%</p>
+                    <p class="stat-bar-label">Glaser safety margin</p>
+                </div>
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--y);">29</p>
+                    <p class="stat-bar-label">HHSRS hazard categories</p>
+                </div>
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--cyan);">50K+</p>
+                    <p class="stat-bar-label">Vessels tracked globally</p>
+                </div>
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--r);">£2.1T</p>
+                    <p class="stat-bar-label">UK regulated assets</p>
+                </div>
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--g);">12K+</p>
+                    <p class="stat-bar-label">High-rise buildings in scope</p>
+                </div>
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--b);">100%</p>
+                    <p class="stat-bar-label">Deterministic AI audit</p>
+                </div>
+            </div>
+            <div class="stat-marquee-content" aria-hidden="true">
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--r);">4.4M</p>
+                    <p class="stat-bar-label">Social homes in scope</p>
+                </div>
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--g);">9M+</p>
+                    <p class="stat-bar-label">Total properties by 2027</p>
+                </div>
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--b);">2.2%</p>
+                    <p class="stat-bar-label">Glaser safety margin</p>
+                </div>
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--y);">29</p>
+                    <p class="stat-bar-label">HHSRS hazard categories</p>
+                </div>
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--cyan);">50K+</p>
+                    <p class="stat-bar-label">Vessels tracked globally</p>
+                </div>
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--r);">£2.1T</p>
+                    <p class="stat-bar-label">UK regulated assets</p>
+                </div>
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--g);">12K+</p>
+                    <p class="stat-bar-label">High-rise buildings in scope</p>
+                </div>
+                <div class="stat-bar-item">
+                    <p class="stat-bar-value" style="color:var(--b);">100%</p>
+                    <p class="stat-bar-label">Deterministic AI audit</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         SECTION: THE R-KID PROTOCOL
+         ============================================================ -->
+    <section class="info-section rkid-section" id="rkid">
+        <div class="container">
+            <div class="rkid-hero reveal">
+                <p class="mono-sm" style="margin-bottom:1.5rem;">Protocol</p>
+                <div class="rkid-logo">
+                    <span class="rkid-logo-letter r" data-label="Constraints">R</span>
+                    <span class="rkid-logo-letter k" data-label="Knowledge">K</span>
+                    <span class="rkid-logo-letter i" data-label="Inference">I</span>
+                    <span class="rkid-logo-letter d" data-label="Detection">D</span>
+                </div>
+                <h2 class="section-title" style="margin-top:2rem;">The R-KID Protocol</h2>
+                <p class="section-subtitle">Structured Reasoning for Modern AI</p>
+                <p class="rkid-tagline">A structured reasoning layer that sits on top of modern AI systems. Where LLMs predict the next token, R-KID enforces trajectory integrity &mdash; preventing drift, ensuring consistency, and making every decision auditable.</p>
+            </div>
+
+            <div class="rkid-pillars">
+                <div class="rkid-pillar reveal reveal-delay-1">
+                    <div class="rkid-pillar-icon"><i data-lucide="shield-alert"></i></div>
+                    <h3 class="rkid-pillar-title">Constraints</h3>
+                    <p class="rkid-pillar-sub">Risk Domain</p>
+                    <p class="rkid-pillar-desc">Boundaries and risk parameters that govern what the system cannot do. Deterministic guardrails, not probabilistic suggestions.</p>
+                </div>
+                <div class="rkid-pillar reveal reveal-delay-1">
+                    <div class="rkid-pillar-icon"><i data-lucide="database"></i></div>
+                    <h3 class="rkid-pillar-title">Knowledge</h3>
+                    <p class="rkid-pillar-sub">Systems &amp; Structure</p>
+                    <p class="rkid-pillar-desc">Procedures, formal logic, and institutional knowledge. The analytical structures that ground every interaction.</p>
+                </div>
+                <div class="rkid-pillar reveal reveal-delay-2">
+                    <div class="rkid-pillar-icon"><i data-lucide="scan-eye"></i></div>
+                    <h3 class="rkid-pillar-title">Inference</h3>
+                    <p class="rkid-pillar-sub">Pattern Recognition</p>
+                    <p class="rkid-pillar-desc">Mapping complex discussions into four-dimensional analytical structures. Making long conversations easier to interpret.</p>
+                </div>
+                <div class="rkid-pillar reveal reveal-delay-2">
+                    <div class="rkid-pillar-icon"><i data-lucide="radar"></i></div>
+                    <h3 class="rkid-pillar-title">Detection</h3>
+                    <p class="rkid-pillar-sub">Consistency Monitor</p>
+                    <p class="rkid-pillar-desc">Real-time drift detection across every logic node. Reasoning remains aligned with earlier logic rather than drifting over time.</p>
+                </div>
+            </div>
+
+            <div class="rkid-flow reveal reveal-delay-3">
+                <div class="rkid-flow-box">AI Model</div>
+                <span class="rkid-flow-arrow">&rarr;</span>
+                <div class="rkid-flow-box" style="border-color:var(--cyan);">R-KID Protocol</div>
+                <span class="rkid-flow-arrow">&rarr;</span>
+                <div class="rkid-flow-box">Structured Output</div>
             </div>
         </div>
     </section>
@@ -2769,13 +3078,13 @@
             <div class="dewpoint-tiers">
                 <div class="tier-card reveal reveal-delay-1">
                     <p class="tier-badge">Tier 1</p>
-                    <h3 class="tier-name">Beeper</h3>
-                    <p class="tier-desc">Open source. Protects the resident. Environmental monitoring with local alerts.</p>
+                    <h3 class="tier-name">Edge Intelligence</h3>
+                    <p class="tier-desc">Open source. Protects the resident. Environmental monitoring with real-time edge processing and local alerts.</p>
                 </div>
                 <div class="tier-card reveal reveal-delay-2">
                     <p class="tier-badge">Tier 2</p>
-                    <h3 class="tier-name">Edge Intelligence</h3>
-                    <p class="tier-desc">Licensed CNVF scoring. Protects the landlord. Real-time causal compliance at the edge.</p>
+                    <h3 class="tier-name">Licensed CNVF</h3>
+                    <p class="tier-desc">Licensed CNVF scoring. Protects the landlord. Real-time causal compliance with deterministic vector enforcement.</p>
                 </div>
                 <div class="tier-card reveal reveal-delay-3">
                     <p class="tier-badge">Tier 3</p>
@@ -2804,49 +3113,6 @@
         </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 12: RESEARCH & PARTNERSHIPS
-         ============================================================ -->
-    <section class="info-section" id="research">
-        <div class="container">
-            <div class="reveal">
-                <p class="mono-sm" style="margin-bottom:0.75rem;">Evidence</p>
-                <h2 class="section-title">Institutional Evidence Base</h2>
-            </div>
-            <div class="trust-strip reveal reveal-delay-1">
-                <span class="trust-pill">University of Birmingham</span>
-                <span class="trust-pill">NHS PIONEER</span>
-                <span class="trust-pill">SAS Data for Good</span>
-                <span class="trust-pill">APPG Healthy Homes</span>
-                <span class="trust-pill">West Midlands Combined Authority</span>
-            </div>
-            <div class="research-grid">
-                <div class="research-card reveal reveal-delay-1">
-                    <h3 class="research-card-name">University of Birmingham</h3>
-                    <p class="research-card-desc">Academic research partnership on causal compliance models.</p>
-                </div>
-                <div class="research-card reveal reveal-delay-1">
-                    <h3 class="research-card-name">NHS PIONEER</h3>
-                    <p class="research-card-desc">10-year health data. 5.9M population. Longitudinal causal analysis.</p>
-                </div>
-                <div class="research-card reveal reveal-delay-2">
-                    <h3 class="research-card-name">SAS Data for Good</h3>
-                    <p class="research-card-desc">Advanced analytics partnership for social impact.</p>
-                </div>
-                <div class="research-card reveal reveal-delay-2">
-                    <h3 class="research-card-name">West Midlands LAs</h3>
-                    <p class="research-card-desc">Local authority partnerships across the West Midlands region.</p>
-                </div>
-                <div class="research-card reveal reveal-delay-3">
-                    <h3 class="research-card-name">APPG Healthy Homes</h3>
-                    <p class="research-card-desc">All-Party Parliamentary Group engagement on housing and health.</p>
-                </div>
-            </div>
-            <div class="research-quote reveal reveal-delay-3">
-                <p>First population-scale causal proof linking housing conditions to health outcomes.</p>
-            </div>
-        </div>
-    </section>
 
     <!-- ============================================================
          SECTION: THE TEAM BEHIND RGBY
@@ -2950,7 +3216,7 @@
                 <a href="#hero">About</a>
                 <a href="#platform">Platform</a>
                 <a href="#sectors">Sectors</a>
-                <a href="#research">Research</a>
+                <a href="#rkid">R-KID Protocol</a>
                 <a href="#dewpoint">DewPoint Guardian</a>
                 <a href="#contact">Contact</a>
             </div>
