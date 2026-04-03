@@ -1,6 +1,46 @@
 (function() {
     'use strict';
 
+    // Hero dots converge
+    var heroDots = document.getElementById('heroDots');
+    if (heroDots) {
+        setTimeout(function() { heroDots.classList.add('converged'); }, 100);
+    }
+
+    // Typed tagline
+    var heroTagline = document.getElementById('heroTagline');
+    if (heroTagline) {
+        var taglineText = 'Operational intelligence for regulated environments';
+        var i = 0;
+        heroTagline.textContent = '';
+        var cursor = document.createElement('span');
+        cursor.className = 'typed-cursor';
+        heroTagline.appendChild(cursor);
+        function typeChar() {
+            if (i < taglineText.length) {
+                heroTagline.insertBefore(document.createTextNode(taglineText.charAt(i)), cursor);
+                i++;
+                setTimeout(typeChar, 50);
+            }
+        }
+        setTimeout(typeChar, 1000);
+    }
+
+    // Hero parallax
+    var heroDotsEl = document.getElementById('heroDots');
+    var heroSection = document.getElementById('hero');
+    if (heroDotsEl && heroSection) {
+        window.addEventListener('scroll', function() {
+            var scrollY = window.scrollY || window.pageYOffset;
+            var heroHeight = heroSection.offsetHeight;
+            if (scrollY < heroHeight) {
+                var progress = scrollY / heroHeight;
+                heroDotsEl.style.transform = 'translateY(' + (progress * 50) + 'px)';
+                heroDotsEl.style.opacity = 1 - progress * 1.5;
+            }
+        }, { passive: true });
+    }
+
     // Loading screen
     window.addEventListener('load', function() {
         var loader = document.getElementById('loader');

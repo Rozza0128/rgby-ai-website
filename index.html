@@ -47,14 +47,6 @@
          ============================================================ -->
     <canvas id="particleField"></canvas>
 
-    <!-- ============================================================
-         DATA READOUT (FIXED, TOP-RIGHT)
-         ============================================================ -->
-    <div class="data-readout" id="dataReadout">
-        <div>CNVF_ENGINE // <span class="val-cyan">ACTIVE</span></div>
-        <div>STATE_VECTOR: [<span class="val-r" id="svR">0.00</span>, <span class="val-g" id="svG">0.00</span>, <span class="val-b" id="svB">0.00</span>, <span class="val-y" id="svY">0.00</span>]</div>
-        <div>VALIDATION: <span id="svStatus">PENDING</span></div>
-    </div>
 
     <!-- ============================================================
          VIDEO MODAL
@@ -123,183 +115,17 @@
             <h1 class="hero-title"><span class="fly-letter" style="color:var(--r); animation-delay:0.6s">R</span><span class="fly-letter" style="color:var(--g); animation-delay:0.8s">G</span><span class="fly-letter" style="color:var(--b); animation-delay:1.0s">B</span><span class="fly-letter" style="color:var(--y); animation-delay:1.2s">Y</span><span class="fly-letter" style="color:var(--text); animation-delay:1.5s">.ai</span></h1>
             <p class="hero-tagline" id="heroTagline"></p>
             <p class="hero-location">Birmingham, UK</p>
-            <a href="/contact" class="btn-primary" style="margin-top:1.5rem;">Talk to us</a>
-            <button class="hero-video-btn" id="heroVideoBtn" style="margin-top:0.75rem;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                Watch the explainer
-            </button>
-        </div>
-        <div class="scene-divider"></div>
-        <span class="scene-number">01 / 09</span>
-    </section>
-
-    <!-- ============================================================
-         SECTION 2: THE PROBLEM
-         ============================================================ -->
-    <section class="scene scene-problem" id="problem">
-        <canvas class="scene-canvas" id="problemCanvas"></canvas>
-        <div class="scene-text reveal">
-            <p class="body-lg headline-lg" style="max-width:800px;">Most systems rely on static checks.</p>
-        </div>
-        <div class="scene-divider"></div>
-        <span class="scene-number">02 / 09</span>
-    </section>
-
-    <!-- ============================================================
-         SECTION 3: THE SOLUTION
-         ============================================================ -->
-    <section class="scene scene-solution" id="platform">
-        <canvas class="scene-canvas" id="solutionCanvas"></canvas>
-        <div class="scene-text reveal">
-            <p class="headline-lg" style="max-width:900px;">RGBY tracks how conditions change over time.</p>
-        </div>
-        <div class="scene-divider"></div>
-        <span class="scene-number">03 / 09</span>
-    </section>
-
-    <!-- ============================================================
-         SECTION 4: THE STATE SPACE
-         ============================================================ -->
-    <section class="scene scene-state" id="statespace">
-        <div class="scene-content" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;">
-            <div class="state-space reveal">
-                <div class="state-glow-ring"></div>
-                <div class="state-glow-ring"></div>
-                <div class="state-glow-ring"></div>
-                <div class="state-axis-h"></div>
-                <div class="state-axis-v"></div>
-                <div class="state-orbit-trail"></div>
-                <div class="state-orbit-dot"></div>
-                <span class="state-label procedure">Procedure</span>
-                <span class="state-label behaviour">Behaviour</span>
-                <span class="state-label pattern">Pattern</span>
-                <span class="state-label risk">Risk</span>
+            <div style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;align-items:center;">
+                <a href="/contact" class="btn-primary">Talk to us</a>
+                <button class="hero-video-btn" id="heroVideoBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    Watch the explainer
+                </button>
             </div>
+            <p style="margin-top:2.5rem;font-family:var(--font-body);font-weight:300;font-size:0.95rem;color:var(--text-3);max-width:600px;line-height:1.7;">Signal detection, drift monitoring, and deterministic decision support across housing, maritime, construction, financial services, energy, defence, and AI governance.</p>
         </div>
-        <div class="scene-text-bottom reveal reveal-delay-1">
-            <p class="body-lg">It maps risk, pattern, procedure, and behaviour into a structured decision model.</p>
-        </div>
-        <div class="scene-divider"></div>
-        <span class="scene-number">04 / 09</span>
     </section>
 
-    <!-- ============================================================
-         SECTION 5: DRIFT DETECTION
-         ============================================================ -->
-    <section class="scene scene-drift" id="drift">
-        <div class="scene-content" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;">
-            <div class="concentric-squares reveal">
-                <div class="c-square"></div>
-                <div class="c-square"></div>
-                <div class="c-square"></div>
-                <div class="c-square"></div>
-                <div class="c-square"></div>
-                <div class="drift-line"></div>
-            </div>
-        </div>
-        <div class="scene-text-bottom reveal reveal-delay-1">
-            <p class="body-lg">Drift appears before failure.</p>
-            <p class="body-lg" style="margin-top:0.75rem;color:var(--text-3);">RGBY is designed to detect that drift early.</p>
-        </div>
-        <div class="scene-divider"></div>
-        <span class="scene-number">05 / 09</span>
-    </section>
-
-    <!-- ============================================================
-         SECTION 6: HIGH RISK ALERT
-         ============================================================ -->
-    <section class="scene scene-risk" id="highrisk">
-        <div class="risk-glow"></div>
-        <div class="risk-scanline"></div>
-        <div class="risk-diagonal"></div>
-        <div class="risk-squares">
-            <div class="concentric-squares" style="width:100%;height:100%;">
-                <div class="c-square"></div>
-                <div class="c-square"></div>
-                <div class="c-square"></div>
-            </div>
-        </div>
-        <div class="scene-content" style="display:flex;align-items:center;justify-content:center;height:100vh;">
-            <div class="reveal">
-                <h2 class="risk-title glitch-text" data-text="HIGH RISK">HIGH RISK</h2>
-            </div>
-        </div>
-        <div class="scene-text-bottom reveal reveal-delay-2">
-            <p class="body-lg">Deterministic logic makes outputs traceable and auditable.</p>
-        </div>
-        <div class="scene-divider"></div>
-        <span class="scene-number">06 / 09</span>
-    </section>
-
-    <!-- ============================================================
-         SECTION 7: CNVF ENGINE
-         ============================================================ -->
-    <section class="scene scene-engine" id="engine">
-        <div class="scene-content" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;">
-            <div class="reveal" style="position:relative;">
-                <div class="engine-box">
-                    <div class="engine-box-glow"></div>
-                    <span class="engine-label">CNVF Vector Engine</span>
-                </div>
-                <div class="engine-orbit">
-                    <div class="engine-orbit-dot red"></div>
-                    <div class="engine-orbit-dot green"></div>
-                    <div class="engine-orbit-dot blue"></div>
-                    <div class="engine-orbit-dot yellow"></div>
-                </div>
-            </div>
-        </div>
-        <div class="scene-text-bottom reveal reveal-delay-1">
-            <p class="body-lg">The platform tests whether change is operationally plausible, not just statistically visible.</p>
-        </div>
-        <div class="scene-divider"></div>
-        <span class="scene-number">07 / 09</span>
-    </section>
-
-    <!-- ============================================================
-         SECTION 8: PHYSICS OF REALITY
-         ============================================================ -->
-    <section class="scene scene-physics" id="physics">
-        <div class="polygons-container">
-            <svg class="polygon p1" viewBox="0 0 100 100" style="width:250px;height:250px;position:absolute;fill:none;stroke:var(--r);stroke-width:0.5;opacity:0.2;">
-                <polygon points="50,5 95,38 82,95 18,95 5,38" />
-            </svg>
-            <svg class="polygon p2" viewBox="0 0 100 100" style="width:300px;height:300px;position:absolute;fill:none;stroke:var(--g);stroke-width:0.5;opacity:0.15;">
-                <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" />
-            </svg>
-            <svg class="polygon p3" viewBox="0 0 100 100" style="width:200px;height:200px;position:absolute;fill:none;stroke:var(--b);stroke-width:0.5;opacity:0.2;">
-                <polygon points="50,5 95,38 82,95 18,95 5,38" />
-            </svg>
-            <svg class="polygon p4" viewBox="0 0 100 100" style="width:280px;height:280px;position:absolute;fill:none;stroke:var(--y);stroke-width:0.5;opacity:0.12;">
-                <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" />
-            </svg>
-            <div class="physics-cyan-dot"></div>
-        </div>
-        <div class="scene-text reveal">
-            <p class="body-lg" style="font-size:clamp(1.1rem,2vw,1.4rem);">This strengthens control, prioritisation, and assurance under pressure.</p>
-        </div>
-        <div class="scene-divider"></div>
-        <span class="scene-number">08 / 09</span>
-    </section>
-
-    <!-- ============================================================
-         SECTION 9: ENFORCING TRAJECTORY INTEGRITY (CLIMAX)
-         ============================================================ -->
-    <section class="scene scene-climax" id="climax">
-        <div class="climax-grid-flash"></div>
-        <div class="climax-line-h"></div>
-        <div class="climax-line-v"></div>
-        <div class="climax-flare red"></div>
-        <div class="climax-flare green"></div>
-        <div class="climax-flare blue"></div>
-        <div class="climax-flare yellow"></div>
-        <div class="climax-red-edge"></div>
-        <div class="climax-text reveal">
-            <h2 class="climax-headline">Enforcing<br>Trajectory<br>Integrity</h2>
-            <p class="climax-sub">CNVF Vector Engine // System Active</p>
-        </div>
-        <span class="scene-number">09 / 09</span>
-    </section>
 
     <!-- ============================================================
          PLATFORM INTRO
@@ -552,7 +378,6 @@
          JAVASCRIPT
          ============================================================ -->
     <script src="/shared.js"></script>
-    <script src="/home.js"></script>
     <script src="/forms.js"></script>
 
 </body>
