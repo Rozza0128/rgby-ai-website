@@ -2621,6 +2621,14 @@
         </video>
     </div>
 
+    <div class="video-modal" id="rkidVideoModal">
+        <button class="video-modal-close" id="rkidVideoModalClose">&times;</button>
+        <video id="rkidVideo" controls preload="none" style="max-height:90vh; max-width:min(90vw, 450px);">
+            <source src="video/rkid-explainer.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
     <!-- ============================================================
          BACK TO TOP BUTTON
          ============================================================ -->
@@ -3026,6 +3034,10 @@
                 <h2 class="section-title" style="margin-top:2rem;">The R-KID Protocol</h2>
                 <p class="section-subtitle">Structured Reasoning for Modern AI</p>
                 <p class="rkid-tagline">A structured reasoning layer that sits on top of modern AI systems. Where LLMs predict the next token, R-KID enforces trajectory integrity &mdash; preventing drift, ensuring consistency, and making every decision auditable.</p>
+                <button class="hero-video-btn" id="rkidVideoBtn" style="margin-top:2rem;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    Watch the R-KID explainer
+                </button>
             </div>
 
             <div class="rkid-pillars">
@@ -3376,6 +3388,47 @@
                 videoModal.classList.remove('active');
                 explainerVideo.pause();
                 explainerVideo.currentTime = 0;
+            }
+        });
+
+        // ============================================================
+        // R-KID VIDEO MODAL
+        // ============================================================
+        var rkidVideoModal = document.getElementById('rkidVideoModal');
+        var rkidVideoModalClose = document.getElementById('rkidVideoModalClose');
+        var rkidVideo = document.getElementById('rkidVideo');
+        var rkidVideoBtn = document.getElementById('rkidVideoBtn');
+
+        if (rkidVideoBtn) {
+            rkidVideoBtn.addEventListener('click', function() {
+                rkidVideoModal.classList.add('active');
+                rkidVideo.play();
+            });
+        }
+
+        if (rkidVideoModalClose) {
+            rkidVideoModalClose.addEventListener('click', function() {
+                rkidVideoModal.classList.remove('active');
+                rkidVideo.pause();
+                rkidVideo.currentTime = 0;
+            });
+        }
+
+        if (rkidVideoModal) {
+            rkidVideoModal.addEventListener('click', function(e) {
+                if (e.target === rkidVideoModal) {
+                    rkidVideoModal.classList.remove('active');
+                    rkidVideo.pause();
+                    rkidVideo.currentTime = 0;
+                }
+            });
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && rkidVideoModal && rkidVideoModal.classList.contains('active')) {
+                rkidVideoModal.classList.remove('active');
+                rkidVideo.pause();
+                rkidVideo.currentTime = 0;
             }
         });
 
